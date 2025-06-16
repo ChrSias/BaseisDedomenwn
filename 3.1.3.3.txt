@@ -1,0 +1,57 @@
+DELIMITER $
+
+CREATE PROCEDURE GetConcertVenueDetails(
+       IN conID INT,               
+    IN requiredCapacity INT,         
+    OUT venueID INT,                 
+    OUT venueCapacity INT    )
+BEGIN
+DECLARE FLAG INT;
+DECLARE Cstatus VARCHAR(50);
+DECLARE vCapacity INT;
+DECLARE vCompletedCon INT;
+DECLARE vYearsOperation INT;
+    SELECT COUNT(*) 
+    INTO FLAG 
+    FROM CONCERT
+    WHERE conID=CONCERTID;
+    
+   SELECT CONCERT.ConcertStatus 
+   INTO Cstatus
+    FROM CONCERT
+    WHERE conID=CONCERTID;
+    
+    IF FLAG=0   THEN
+    SET venueID = NULL;
+	SET venueCapacity = 0;
+    SELECT venueID AS VENUEID, venueCapacity AS CAPACITY;
+   
+   ELSEIF Cstatus='CANCELED' THEN
+   SET venueID = NULL;
+	SET venueCapacity = 0;
+    SELECT venueID AS VENUEID, venueCapacity AS CAPACITY;
+    
+    
+    ELSEIF FLAG>0 THEN 
+    SELECT concert.VenueID , venue.capacity
+    INTO venueID, venueCapacity
+    FROM concert
+    LEFT JOIN venue ON concert.venueID=venue.venueID
+    WHERE CONCERTID=conID;
+   
+   IF venueID IS NOT NULL THEN 
+   SELECT venueID AS VENUEID, venueCapacity AS CAPACITY; 
+    
+    ELSE
+SELECT venue.venueID,venue.Capacity INTO venueID,venueCapacity
+    FROM venue
+    where capacity >=1.1*requiredCapacity AND venueStatus != 'BOOKED'
+    order by( (Capacity  DIV 1000)*1 + (CompletedCon  DIV 100)*3 + YearsOperation*2 ) DESC LIMIT 1;
+    
+    SELECT venueID AS VENUEID, venueCapacity AS CAPACITY; 
+    end if;
+   
+END IF;
+END $
+
+DELIMITER ;

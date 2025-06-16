@@ -1,0 +1,2531 @@
+import java.sql.*;
+import java.awt.*;
+import javax.swing.*;
+import java.sql.Date;
+
+public class NewJFrame extends javax.swing.JFrame {
+ private static Connection connection;
+ 
+    /**
+     * Creates new form NewJFrame
+     */
+     public NewJFrame(){
+         try{connection=DriverManager. getConnection("jdbc:mysql://localhost:3306/musicindustry?useSSL=false&allowPublicKeyRetrieval=true", "root", "12345"); 
+         System. out. println("Database connected!" ); }
+         catch(SQLException e){ System. err. println("Not Connected: "+e.getMessage()); }
+         initComponents();
+     }
+
+
+  
+
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        jInternalFrame1 = new javax.swing.JInternalFrame();
+        jButton19 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
+        jButton12 = new javax.swing.JButton();
+        jButton13 = new javax.swing.JButton();
+        jButton14 = new javax.swing.JButton();
+        jButton15 = new javax.swing.JButton();
+        jButton16 = new javax.swing.JButton();
+        jButton17 = new javax.swing.JButton();
+        jButton18 = new javax.swing.JButton();
+
+        jInternalFrame1.setVisible(true);
+
+        jButton19.setText("jButton19");
+
+        javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
+        jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
+        jInternalFrame1Layout.setHorizontalGroup(
+            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrame1Layout.createSequentialGroup()
+                .addContainerGap(235, Short.MAX_VALUE)
+                .addComponent(jButton19)
+                .addGap(216, 216, 216))
+        );
+        jInternalFrame1Layout.setVerticalGroup(
+            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                .addGap(54, 54, 54)
+                .addComponent(jButton19)
+                .addContainerGap(153, Short.MAX_VALUE))
+        );
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 51, 51));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        setForeground(new java.awt.Color(204, 51, 0));
+        setMaximizedBounds(new java.awt.Rectangle(0, 0, 0, 0));
+
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(51, 0, 0));
+        jLabel1.setText("Πίνακες");
+        jLabel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        jButton1.setText("album");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+
+        jButton2.setText("albumrelease");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+
+        jButton3.setText("artist");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
+
+        jButton4.setText("artistcompany");
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
+
+        jButton5.setText("band");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
+
+        jButton6.setText("bandmember");
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton6MouseClicked(evt);
+            }
+        });
+
+        jButton7.setText("concert");
+        jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton7MouseClicked(evt);
+            }
+        });
+
+        jButton8.setText("dba");
+        jButton8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton8MouseClicked(evt);
+            }
+        });
+
+        jButton9.setText("dbalog");
+        jButton9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton9MouseClicked(evt);
+            }
+        });
+
+        jButton10.setText("genre");
+        jButton10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton10MouseClicked(evt);
+            }
+        });
+
+        jButton11.setText("person");
+        jButton11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton11MouseClicked(evt);
+            }
+        });
+
+        jButton12.setText("producer");
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
+
+        jButton13.setText("producercompany");
+        jButton13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton13MouseClicked(evt);
+            }
+        });
+
+        jButton14.setText("recordcompany");
+        jButton14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton14MouseClicked(evt);
+            }
+        });
+
+        jButton15.setText("records");
+        jButton15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton15MouseClicked(evt);
+            }
+        });
+
+        jButton16.setText("track");
+        jButton16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton16MouseClicked(evt);
+            }
+        });
+
+        jButton17.setText("venue");
+        jButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton17ActionPerformed(evt);
+            }
+        });
+
+        jButton18.setText("Exit");
+        jButton18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton18ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(47, 47, 47)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(80, 80, 80)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(80, 80, 80)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(47, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(236, 236, 236)
+                .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 19, 19))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2)
+                    .addComponent(jButton7)
+                    .addComponent(jButton12))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton3)
+                    .addComponent(jButton8)
+                    .addComponent(jButton13))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton4)
+                    .addComponent(jButton9)
+                    .addComponent(jButton14))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton5)
+                    .addComponent(jButton10)
+                    .addComponent(jButton15))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton11)
+                    .addComponent(jButton6)
+                    .addComponent(jButton16))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton17)
+                .addGap(0, 23, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton18)
+                .addContainerGap())
+        );
+
+        pack();
+    }// </editor-fold>                        
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {                                      
+       JFrame frame = new JFrame("AlbumRelease Table Management");
+frame.setSize(900,600);
+frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    frame.setLayout(new BorderLayout());
+    JTextArea textArea=new JTextArea();
+    textArea.setEditable(false);
+
+    try{String query="SELECT * FROM albumrelease"; 
+     Statement stmt=connection.createStatement(); 
+     ResultSet rs=stmt. executeQuery(query);
+
+        StringBuilder res=new StringBuilder("Album Releases:\n");//res=result
+        while (rs.next()) {
+            res.append("ReleaseID: ").append(rs.getInt("ReleaseID"))
+                  .append(", AlbumID: ").append(rs.getInt("AlbumID"))
+                  .append(", ReleaseDate: ").append(rs.getDate("ReleaseDate"))
+                  .append(", ReleaseType: ").append(rs.getString("ReleaseType"))
+                  .append(", ReleaseStatus: ").append(rs.getString("ReleaseStatus"))
+                  .append(", Packaging: ").append(rs.getString("Packaging"))
+                  .append("\n");}
+textArea.setText(res.toString());
+rs.close();
+stmt.close();
+    }catch(SQLException exc) {
+        JOptionPane.showMessageDialog(this, "Cannot execute the query, there is an error: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+        return;
+ }
+    JScrollPane scrollPane=new JScrollPane(textArea);
+    frame.add(scrollPane, BorderLayout.CENTER);
+
+    JPanel buttpanel = new JPanel();
+    JButton insertbutton = new JButton("Insert");
+    JButton updatebutton = new JButton("Update");
+    JButton deletebutton = new JButton("Delete");
+    JButton okButton = new JButton("OK");
+
+    buttpanel.add(insertbutton);
+    buttpanel.add(updatebutton);
+    buttpanel.add(deletebutton);
+    buttpanel.add(okButton);
+    frame.add(buttpanel,BorderLayout.SOUTH);
+
+    insertbutton.addActionListener(exc->insertAlbumRelease());
+    updatebutton.addActionListener(exc->updateAlbumRelease());
+    deletebutton.addActionListener(exc->deleteAlbumRelease());
+
+    okButton.addActionListener(exc->{frame.dispose();new NewJFrame().setVisible(true);});
+
+    frame.setVisible(true);
+}
+
+private void insertAlbumRelease() {
+    String albumID=JOptionPane.showInputDialog(this,"Enter the AlbumID:");
+    String releaseDate=JOptionPane.showInputDialog(this,"Enter the ReleaseDate(YYYY-MM-DD):");
+    String releaseType=JOptionPane.showInputDialog(this,"Enter the ReleaseType(LP/CD/MP3):");
+    String releaseStatus=JOptionPane.showInputDialog(this,"Enter the ReleaseStatus(OFFICIAL/PROMOTION/BOOTLEG/WITHDRAWN/CANCELED):");
+    String packaging=JOptionPane.showInputDialog(this,"Enter the Packaging(BOOK/CARDBOARD SLEEVE/DIGIPAK/JEWEL CASE/NA):");
+
+    if(albumID==null||albumID.trim().isEmpty()||releaseType==null||releaseStatus==null||packaging==null){
+   JOptionPane.showMessageDialog(this,"ReleaseDate is not required!","Input Error",JOptionPane.ERROR_MESSAGE);
+    return;}
+    try{String query="INSERT INTO albumrelease(AlbumID,ReleaseDate,ReleaseType,ReleaseStatus,Packaging)VALUES(?, ?, ?, ?, ?)";
+        PreparedStatement pstmt=connection.prepareStatement(query);
+        pstmt.setInt(1,Integer.parseInt(albumID));
+        if(releaseDate==null||releaseDate.trim().isEmpty()){
+            pstmt.setNull(2,java.sql.Types.DATE);
+        }
+        else{
+            pstmt.setDate(2,java.sql.Date.valueOf(releaseDate));}
+       
+        
+        pstmt.setString(3,releaseType.toUpperCase());
+        pstmt.setString(4,releaseStatus.toUpperCase());
+        pstmt.setString(5,packaging.toUpperCase());
+        pstmt.executeUpdate();
+
+        
+        JOptionPane.showMessageDialog(this,"The AlbumRelease inserted successfully!");
+    } 
+    catch(SQLException exc){
+        JOptionPane.showMessageDialog(this,"Error inserting album release: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+    }}
+
+private void updateAlbumRelease(){
+    String releaseID=JOptionPane.showInputDialog(this, "Enter ReleaseID:");
+    String newReleaseDate=JOptionPane.showInputDialog(this, "Enter new ReleaseDate(YYYY-MM-DD):");
+    String newReleaseType=JOptionPane.showInputDialog(this, "Enter new ReleaseType(LP/CD/MP3):");
+    String newReleaseStatus=JOptionPane.showInputDialog(this, "Enter new ReleaseStatus(OFFICIAL/PROMOTION/BOOTLEG/WITHDRAWN/CANCELED):");
+    String newPackaging=JOptionPane.showInputDialog(this, "Enter new Packaging (BOOK/CARDBOARD SLEEVE/DIGIPAK/JEWEL CASE/NA):");
+
+    if (releaseID==null||releaseID.trim().isEmpty()||newReleaseType==null||newReleaseStatus==null||newPackaging==null) {
+        JOptionPane.showMessageDialog(this,"ReleaseDate is not required!", "Input Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    try {
+        String query = "UPDATE albumrelease SET ReleaseDate = ?, ReleaseType = ?, ReleaseStatus = ?, Packaging = ? WHERE ReleaseID = ?";
+        PreparedStatement pstmt=connection.prepareStatement(query);
+        if (newReleaseDate==null||newReleaseDate.trim().isEmpty()){
+            pstmt.setNull(1,java.sql.Types.DATE);
+        } 
+        else{
+         pstmt.setDate(1,java.sql.Date.valueOf(newReleaseDate));
+        }
+        pstmt.setString(2,newReleaseType.toUpperCase());
+        pstmt.setString(3,newReleaseStatus.toUpperCase());
+        pstmt.setString(4,newPackaging.toUpperCase());
+        pstmt.setInt(5,Integer.parseInt(releaseID));
+        pstmt.executeUpdate();
+
+        JOptionPane.showMessageDialog(this, "Album Release updated successfully!");
+    } catch(SQLException e){
+        JOptionPane.showMessageDialog(this,"Error updating album release: " + e.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+    }
+}
+
+private void deleteAlbumRelease(){
+    String releaseIDStr=JOptionPane.showInputDialog(this,"Enter the ReleaseID to delete:");
+
+    if(releaseIDStr==null||releaseIDStr.trim().isEmpty()){
+        JOptionPane.showMessageDialog(this,"The ReleaseID is required!","Input Error",JOptionPane.ERROR_MESSAGE);
+        return;}
+    try{String query="DELETE FROM albumrelease WHERE ReleaseID = ?";
+        PreparedStatement pstmt=connection.prepareStatement(query);
+        pstmt.setInt(1,Integer.parseInt(releaseIDStr));
+        pstmt.executeUpdate();
+        JOptionPane.showMessageDialog(this,"The AlbumRelease deleted successfully!");
+    } 
+    catch(SQLException exc)
+    {
+        JOptionPane.showMessageDialog(this,"Error deleting albumrelease: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+    }
+
+    }                                     
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {                                      
+       JFrame frame=new JFrame("Artist Table Management");
+frame.setSize(800,500);
+frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    frame.setLayout(new BorderLayout());
+
+    JTextArea textArea = new JTextArea();
+    textArea.setEditable(false);
+
+    try{String query = "SELECT * FROM artist";
+        Statement stmt=connection.createStatement();
+        ResultSet rs=stmt.executeQuery(query);
+
+        StringBuilder res=new StringBuilder("Artists:\n"); //res=result
+        while (rs.next()) {
+            res.append("ArtistID: ").append(rs.getInt("ArtistID"))
+                  .append(", ArtistType: ").append(rs.getString("ArtistType"))
+                  .append("\n"); }
+        textArea.setText(res.toString());
+
+        rs.close();
+        stmt.close();
+    }
+    catch(SQLException exc){
+        JOptionPane.showMessageDialog(this,"Error executing query: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    JScrollPane scrollPane = new JScrollPane(textArea);
+    frame.add(scrollPane, BorderLayout.CENTER);
+
+    JPanel buttpanel = new JPanel();
+    JButton insertButton = new JButton("Insert");
+    JButton updateButton = new JButton("Update");
+    JButton deleteButton = new JButton("Delete");
+    JButton okButton = new JButton("OK");
+
+    buttpanel.add(insertButton);
+    buttpanel.add(updateButton);
+    buttpanel.add(deleteButton);
+    buttpanel.add(okButton);
+    frame.add(buttpanel,BorderLayout.SOUTH);
+
+    insertButton.addActionListener(e->insertArtist());
+    updateButton.addActionListener(e->updateArtist());
+    deleteButton.addActionListener(e->deleteArtist());
+
+    okButton.addActionListener(e -> {frame.dispose();new NewJFrame().setVisible(true);});
+    frame.setVisible(true);
+}
+
+private void insertArtist() {
+    String artistType=JOptionPane.showInputDialog(this,"Enter the  ArtistType (PERSON/BAND):");
+
+    if (artistType==null||artistType.trim().isEmpty()){
+        JOptionPane.showMessageDialog(this,"ArtistType is required!","Input Error",JOptionPane.ERROR_MESSAGE);
+        return;}
+
+    try{String query = "INSERT INTO artist (ArtistType) VALUES (?)";
+        PreparedStatement pstmt = connection.prepareStatement(query);
+        pstmt.setString(1,artistType.toUpperCase());
+        pstmt.executeUpdate();
+        JOptionPane.showMessageDialog(this,"The Artist inserted successfully!");
+    } 
+    catch(SQLException e){
+        JOptionPane.showMessageDialog(this,"Error inserting artist: "+e.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+    }
+}
+
+private void updateArtist() {
+    String artistIDStr = JOptionPane.showInputDialog(this, "Enter ArtistID:");
+    String newArtistType = JOptionPane.showInputDialog(this, "Enter new ArtistType (PERSON/BAND):");
+
+    if(artistIDStr==null||newArtistType==null||artistIDStr.trim().isEmpty()||newArtistType.trim().isEmpty()){
+        JOptionPane.showMessageDialog(this, "All fields must be filled!","Input Error",JOptionPane.ERROR_MESSAGE);
+        return;}
+    try{int artistID=Integer.parseInt(artistIDStr);
+
+        String query="UPDATE artist SET ArtistType = ? WHERE ArtistID = ?";
+        PreparedStatement pstmt=connection.prepareStatement(query);
+        pstmt.setString(1,newArtistType.toUpperCase());
+        pstmt.setInt(2,artistID);
+        pstmt.executeUpdate();
+
+        JOptionPane.showMessageDialog(this,"Artist updated successfully!");
+    } catch (SQLException exc){
+        JOptionPane.showMessageDialog(this,"Error updating artist:"+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+}}
+
+private void deleteArtist(){
+    String artistIDStr=JOptionPane.showInputDialog(this,"Enter the  ArtistID to delete:");
+
+    if(artistIDStr==null||artistIDStr.trim().isEmpty()){
+        JOptionPane.showMessageDialog(this,"ArtistID is required!", "Input Error",JOptionPane.ERROR_MESSAGE);
+        return; }
+
+    try{int artistID=Integer.parseInt(artistIDStr);
+
+        String query="DELETE FROM artist WHERE ArtistID = ?";
+        PreparedStatement pstmt = connection.prepareStatement(query);
+        pstmt.setInt(1,artistID);
+        pstmt.executeUpdate();
+        JOptionPane.showMessageDialog(this,"Artist deleted successfully!");
+    }
+    catch(SQLException e){
+        JOptionPane.showMessageDialog(this,"Error deleting artist: "+e.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+    }
+
+    }                                     
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {                                      
+  JFrame frame=new JFrame("ArtistCompany Table Management");
+frame.setSize(800,500);
+frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    frame.setLayout(new BorderLayout());
+
+    JTextArea textArea = new JTextArea();
+    textArea.setEditable(false);
+
+    try{String query="SELECT * FROM artistcompany";
+        Statement stmt=connection.createStatement();
+        ResultSet rs=stmt.executeQuery(query);
+
+        StringBuilder res=new StringBuilder("Artist Company Associations:\n");
+        while(rs.next()){
+            res.append("ArtistID: ").append(rs.getInt("ArtistID"))
+                  .append(", CompanyID: ").append(rs.getInt("CompanyID"))
+                  .append(", FromDate: ").append(rs.getDate("FromDate"))
+                  .append(", ToDate: ").append(rs.getDate("ToDate"))
+                  .append("\n");}
+        textArea.setText(res.toString());
+        rs.close();
+        stmt.close();}
+    catch(SQLException e){
+        JOptionPane.showMessageDialog(this,"Error executing query: "+e.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+        return;}
+
+    JScrollPane scrollPane=new JScrollPane(textArea);
+    frame.add(scrollPane,BorderLayout.CENTER);
+
+    JPanel buttpanel=new JPanel();
+    JButton insertbutton = new JButton("Insert");
+    JButton updatebutton = new JButton("Update");
+    JButton deletebutton = new JButton("Delete");
+    JButton okButton = new JButton("OK");
+
+    buttpanel.add(insertbutton);
+    buttpanel.add(updatebutton);
+    buttpanel.add(deletebutton);
+    buttpanel.add(okButton);
+    frame.add(buttpanel, BorderLayout.SOUTH);
+
+    insertbutton.addActionListener(e->insertArtistCompany());
+    updatebutton.addActionListener(e->updateArtistCompany());
+    deletebutton.addActionListener(e->deleteArtistCompany());
+
+    okButton.addActionListener(e->{frame.dispose();new NewJFrame().setVisible(true);});
+    frame.setVisible(true);
+}
+
+private void insertArtistCompany(){
+    String artistIDStr=JOptionPane.showInputDialog(this,"Enter the ArtistID:");
+    String companyIDStr=JOptionPane.showInputDialog(this,"Enter the CompanyID:");
+    String fromDate=JOptionPane.showInputDialog(this,"Enter From Date(YYYY-MM-DD):");
+    String toDate=JOptionPane.showInputDialog(this,"Enter To Date(YYYY-MM-DD):");
+
+    if(artistIDStr==null||companyIDStr==null||fromDate==null||toDate==null||
+        artistIDStr.trim().isEmpty()||companyIDStr.trim().isEmpty()||fromDate.trim().isEmpty() || toDate.trim().isEmpty()) {
+        JOptionPane.showMessageDialog(this, "All fields are required!", "Input Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    try {
+        int artistID=Integer.parseInt(artistIDStr);
+        int companyID=Integer.parseInt(companyIDStr);
+
+        String query ="INSERT INTO artistcompany (ArtistID, CompanyID, FromDate, ToDate) VALUES (?, ?, ?, ?)";
+        PreparedStatement pstmt=connection.prepareStatement(query);
+        pstmt.setInt(1,artistID);
+        pstmt.setInt(2,companyID);
+        pstmt.setDate(3,Date.valueOf(fromDate));
+        pstmt.setDate(4,Date.valueOf(toDate));
+        pstmt.executeUpdate();
+        JOptionPane.showMessageDialog(this,"The insert of ArtistCompany is successfull");
+    } 
+    catch(SQLException exc){
+        JOptionPane.showMessageDialog(this,"Error inserting ArtistCompany: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+    }}
+
+private void updateArtistCompany(){
+    String artistIDStr=JOptionPane.showInputDialog(this,"Enter the ArtistID:");
+    String companyIDStr=JOptionPane.showInputDialog(this,"Enter the CompanyID:");
+    String fromDate=JOptionPane.showInputDialog(this,"Enter From Date(YYYY-MM-DD):");
+    String newToDate=JOptionPane.showInputDialog(this,"Enter new To Date(YYYY-MM-DD):");
+
+    if(artistIDStr==null||companyIDStr==null||fromDate==null||newToDate==null||
+        artistIDStr.trim().isEmpty()||companyIDStr.trim().isEmpty()||fromDate.trim().isEmpty()||newToDate.trim().isEmpty()){
+        JOptionPane.showMessageDialog(this,"All fields are required!","Input Error", JOptionPane.ERROR_MESSAGE);
+        return;}
+    try{int artistID=Integer.parseInt(artistIDStr);
+        int companyID=Integer.parseInt(companyIDStr);
+
+        String query="UPDATE artistcompany SET ToDate = ? WHERE ArtistID = ? AND CompanyID = ? AND FromDate = ?";
+        PreparedStatement pstmt = connection.prepareStatement(query);
+        pstmt.setDate(1,Date.valueOf(newToDate));
+        pstmt.setInt(2,artistID);
+        pstmt.setInt(3,companyID);
+        pstmt.setDate(4,Date.valueOf(fromDate));
+        pstmt.executeUpdate();
+        JOptionPane.showMessageDialog(this,"The insert of ArtistCompany is successfull");
+    } 
+catch(SQLException exc){
+        JOptionPane.showMessageDialog(this,"Error updating ArtistCompany: " +exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+    }}
+
+private void deleteArtistCompany(){
+    String artistIDStr=JOptionPane.showInputDialog(this, "Enter ArtistID:");
+    String companyIDStr=JOptionPane.showInputDialog(this, "Enter CompanyID:");
+    String fromDate = JOptionPane.showInputDialog(this, "Enter From Date (YYYY-MM-DD):");
+
+    if(artistIDStr==null||companyIDStr==null||fromDate==null||
+        artistIDStr.trim().isEmpty()||companyIDStr.trim().isEmpty()||fromDate.trim().isEmpty()){
+        JOptionPane.showMessageDialog(this,"All fields must e filled","Input Error", JOptionPane.ERROR_MESSAGE);
+        return;}
+
+try{int artistID=Integer.parseInt(artistIDStr);
+        int companyID=Integer.parseInt(companyIDStr);
+
+        String query="DELETE FROM artistcompany WHERE ArtistID = ? AND CompanyID = ? AND FromDate = ?";
+        PreparedStatement pstmt = connection.prepareStatement(query);
+        pstmt.setInt(1,artistID);
+        pstmt.setInt(2,companyID);
+        pstmt.setDate(3,Date.valueOf(fromDate));
+        pstmt.executeUpdate();
+        JOptionPane.showMessageDialog(this,"ArtistCompany deleted successfully!");
+    } 
+catch(SQLException exc){
+        JOptionPane.showMessageDialog(this,"Error deleting ArtistCompany : " +exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+}
+    }                                     
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {                                      
+JFrame frame=new JFrame("Band Table Management");
+frame.setSize(800,500);
+frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+frame.setLayout(new BorderLayout());
+
+JTextArea textArea=new JTextArea();
+textArea.setEditable(false);
+
+try{String query="SELECT * FROM band";
+    Statement stmt=connection.createStatement();
+    ResultSet rs=stmt.executeQuery(query);
+
+    StringBuilder res=new StringBuilder("Bands:\n");
+    while(rs.next()){
+        res.append("BandID: ").append(rs.getInt("BandID"))
+           .append(", BandName: ").append(rs.getString("BandName"))
+           .append(", FormationDate: ").append(rs.getDate("FormationDate"))
+           .append(", DisbandDate: ").append(rs.getDate("DisbandDate"))
+           .append(", ArtistID: ").append(rs.getInt("ArtistID"))
+           .append("\n");}
+    textArea.setText(res.toString());
+    rs.close();
+    stmt.close();}
+catch(SQLException exc){
+    JOptionPane.showMessageDialog(this,"Error executing query: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+    return;}
+
+JScrollPane scrollPane=new JScrollPane(textArea);
+frame.add(scrollPane,BorderLayout.CENTER);
+
+JPanel buttpanel=new JPanel();
+JButton insertbutton=new JButton("Insert");
+JButton updatebutton=new JButton("Update");
+JButton deletebutton=new JButton("Delete");
+JButton okButton=new JButton("OK");
+
+buttpanel.add(insertbutton);
+buttpanel.add(updatebutton);
+buttpanel.add(deletebutton);
+buttpanel.add(okButton);
+frame.add(buttpanel,BorderLayout.SOUTH);
+
+insertbutton.addActionListener(e->insertBand());
+updatebutton.addActionListener(e->updateBand());
+deletebutton.addActionListener(e->deleteBand());
+
+okButton.addActionListener(e->{frame.dispose();new NewJFrame().setVisible(true);});
+frame.setVisible(true);
+}
+
+private void insertBand(){
+    String bandName=JOptionPane.showInputDialog(this,"Enter the BandName:");
+    String formationDate=JOptionPane.showInputDialog(this,"Enter Formation Date(YYYY-MM-DD):");
+    String disbandDate=JOptionPane.showInputDialog(this,"Enter Disband Date(YYYY-MM-DD):");
+    String artistIDStr=JOptionPane.showInputDialog(this,"Enter the ArtistID:");
+
+    if(bandName==null||artistIDStr==null||bandName.trim().isEmpty()||artistIDStr.trim().isEmpty()){
+        JOptionPane.showMessageDialog(this,"Band Name and ArtistID are missing!","Input Error",JOptionPane.ERROR_MESSAGE);
+        return;}
+    try{int artistID=Integer.parseInt(artistIDStr);
+
+        String query="INSERT INTO band (BandName, FormationDate, DisbandDate, ArtistID) VALUES (?, ?, ?, ?)";
+        PreparedStatement pstmt=connection.prepareStatement(query);
+        pstmt.setString(1,bandName);
+        pstmt.setDate(2,formationDate.isEmpty()?null:Date.valueOf(formationDate));
+        pstmt.setDate(3,disbandDate.isEmpty()?null:Date.valueOf(disbandDate));
+        pstmt.setInt(4,artistID);
+        pstmt.executeUpdate();
+
+        JOptionPane.showMessageDialog(this,"The Band inserted successfully!");}
+    catch(SQLException exc){
+        JOptionPane.showMessageDialog(this,"Error inserting band: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+    }}
+
+private void updateBand(){
+    String bandIDStr=JOptionPane.showInputDialog(this,"Enter the BandID to update:");
+    String newBandName=JOptionPane.showInputDialog(this,"Enter the new BandName:");
+
+    if(bandIDStr==null||newBandName==null||bandIDStr.trim().isEmpty()||newBandName.trim().isEmpty()){
+        JOptionPane.showMessageDialog(this,"The BandID and the BandName are required!","Input Error",JOptionPane.ERROR_MESSAGE);
+        return;}
+    try{int bandID=Integer.parseInt(bandIDStr);
+
+        String query="UPDATE band SET BandName = ? WHERE BandID = ?";
+        PreparedStatement pstmt=connection.prepareStatement(query);
+        pstmt.setString(1,newBandName);
+        pstmt.setInt(2,bandID);
+        pstmt.executeUpdate();
+
+        JOptionPane.showMessageDialog(this,"The Band updated successfully!");}
+    catch(SQLException exc){
+        JOptionPane.showMessageDialog(this,"Error updating band: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+    }}
+
+private void deleteBand(){
+    String bandIDStr=JOptionPane.showInputDialog(null,"Enter the BandID to delete:");
+
+    if(bandIDStr==null||bandIDStr.trim().isEmpty()){
+        JOptionPane.showMessageDialog(null,"BandID cannot be empty!","Input Error",JOptionPane.ERROR_MESSAGE);
+        return;}
+   
+    try{int bandID=Integer.parseInt(bandIDStr);
+
+        String query="DELETE FROM band WHERE BandID = ?";
+        PreparedStatement pstmt=connection.prepareStatement(query);
+        pstmt.setInt(1,bandID);
+        pstmt.executeUpdate();
+
+        JOptionPane.showMessageDialog(null,"Band deleted successfully!");}
+    catch(SQLException e){
+        JOptionPane.showMessageDialog(null,"Error deleting band: "+e.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+    }
+
+    }                                     
+
+    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {                                      
+  JFrame frame=new JFrame("Band Member Table Management");
+frame.setSize(800,500);
+frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+frame.setLayout(new BorderLayout());
+
+JTextArea textArea=new JTextArea();
+textArea.setEditable(false);
+
+try{String query="SELECT * FROM bandmember";
+    Statement stmt=connection.createStatement();
+    ResultSet rs=stmt.executeQuery(query);
+
+    StringBuilder res=new StringBuilder("Band Members:\n");
+    while(rs.next()){
+        res.append("BandID: ").append(rs.getInt("BandID"))
+           .append(", PersonID: ").append(rs.getInt("PersonID"))
+           .append(", FromDate: ").append(rs.getDate("FromDate"))
+           .append(", ToDate: ").append(rs.getDate("ToDate"))
+           .append("\n");
+    }
+    textArea.setText(res.toString());
+    rs.close();
+    stmt.close();
+}
+catch(SQLException exc){
+    JOptionPane.showMessageDialog(this,"Error executing query: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+    return;
+}
+
+JScrollPane scrollPane=new JScrollPane(textArea);
+frame.add(scrollPane,BorderLayout.CENTER);
+
+JPanel buttpanel=new JPanel();
+JButton insertbutton=new JButton("Insert");
+JButton updatebutton=new JButton("Update");
+JButton deletebutton=new JButton("Delete");
+JButton okbutton=new JButton("OK");
+
+buttpanel.add(insertbutton);
+buttpanel.add(updatebutton);
+buttpanel.add(deletebutton);
+buttpanel.add(okbutton);
+frame.add(buttpanel,BorderLayout.SOUTH);
+
+insertbutton.addActionListener(exc->insertBandMember());
+updatebutton.addActionListener(exc->updateBandMember());
+deletebutton.addActionListener(exc->deleteBandMember());
+
+okbutton.addActionListener(exc->{frame.dispose();
+    new NewJFrame().setVisible(true);
+});
+
+frame.setVisible(true);
+}
+
+
+private void insertBandMember() {
+String bandIDStr=JOptionPane.showInputDialog(this,"Enter the BandID:");
+ String personIDStr=JOptionPane.showInputDialog(this, "Enter the PersonID:");
+  String fromDate=JOptionPane.showInputDialog(this, "Enter From Date(YYYY-MM-DD):");
+   String toDate=JOptionPane.showInputDialog(this, "Enter To Date(YYYY-MM-DD):");
+
+    if(bandIDStr==null||personIDStr==null||fromDate==null||toDate==null||
+        bandIDStr.trim().isEmpty()||personIDStr.trim().isEmpty()||fromDate.trim().isEmpty()||toDate.trim().isEmpty()){
+        JOptionPane.showMessageDialog(this, "All fields are required!", "Input Error", JOptionPane.ERROR_MESSAGE);
+        return;}
+    try{int bandID=Integer.parseInt(bandIDStr);
+        int personID=Integer.parseInt(personIDStr);
+
+        String query="INSERT INTO bandmember (BandID, PersonID, FromDate, ToDate) VALUES (?, ?, ?, ?)";
+        PreparedStatement pstmt=connection.prepareStatement(query);
+        pstmt.setInt(1,bandID);
+        pstmt.setInt(2,personID);
+        pstmt.setDate(3,Date.valueOf(fromDate));
+        pstmt.setDate(4,Date.valueOf(toDate));
+        pstmt.executeUpdate();
+
+        JOptionPane.showMessageDialog(this,"The Insert of BandMember is successfull!");
+    } 
+    catch (SQLException exc) {
+        JOptionPane.showMessageDialog(this,"Error inserting band member: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+    }
+}
+
+private void updateBandMember(){
+    String bandIDStr=JOptionPane.showInputDialog(this, "Enter BandID:");
+    String personIDStr=JOptionPane.showInputDialog(this, "Enter PersonID:");
+    String fromDate=JOptionPane.showInputDialog(this, "Enter From Date (YYYY-MM-DD):");
+    String newToDate=JOptionPane.showInputDialog(this, "Enter new To Date (YYYY-MM-DD):");
+
+    if(bandIDStr==null||personIDStr==null||fromDate==null||newToDate==null||
+        bandIDStr.trim().isEmpty()||personIDStr.trim().isEmpty()||fromDate.trim().isEmpty()||newToDate.trim().isEmpty()){
+        JOptionPane.showMessageDialog(this,"All fields are required!", "Input Error",JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+ try{int bandID=Integer.parseInt(bandIDStr);
+        int personID=Integer.parseInt(personIDStr);
+
+String query="UPDATE bandmember SET ToDate = ? WHERE BandID = ? AND PersonID = ? AND FromDate = ?";
+        PreparedStatement pstmt=connection.prepareStatement(query);
+        pstmt.setDate(1,Date.valueOf(newToDate));
+        pstmt.setInt(2,bandID);
+        pstmt.setInt(3,personID);
+        pstmt.setDate(4,Date.valueOf(fromDate));
+        pstmt.executeUpdate();
+
+        JOptionPane.showMessageDialog(this,"The update of BandMeber is successfull!");
+    }
+ catch(SQLException exc){
+        JOptionPane.showMessageDialog(this,"Error updating band member: " +exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+    }
+}
+
+private void deleteBandMember(){
+    String bandIDStr=JOptionPane.showInputDialog(this,"Enter the BandID:");
+    String personIDStr=JOptionPane.showInputDialog(this, "Enter the PersonID:");
+    String fromDate=JOptionPane.showInputDialog(this,"Enter From Date(YYYY-MM-DD):");
+    String toDate=JOptionPane.showInputDialog(this,"Enter To Date(YYYY-MM-DD):");
+
+    if(bandIDStr==null||personIDStr==null||fromDate==null||toDate==null||
+        bandIDStr.trim().isEmpty()||personIDStr.trim().isEmpty()||fromDate.trim().isEmpty()||toDate.trim().isEmpty()) {
+        JOptionPane.showMessageDialog(this,"All fields must be filled!","Input Error", JOptionPane.ERROR_MESSAGE);
+        return; }
+    try{int bandID=Integer.parseInt(bandIDStr);
+        int personID=Integer.parseInt(personIDStr);
+
+        String query = "DELETE FROM bandmember WHERE BandID = ? AND PersonID = ? AND FromDate = ? AND ToDate = ?";
+        PreparedStatement pstmt=connection.prepareStatement(query);
+        pstmt.setInt(1,bandID);
+        pstmt.setInt(2,personID);
+        pstmt.setDate(3,Date.valueOf(fromDate));
+        pstmt.setDate(4,Date.valueOf(toDate));
+        pstmt.executeUpdate();
+
+        JOptionPane.showMessageDialog(this,"The Bandmember deleted successfully!");
+    } 
+    catch(SQLException e){
+        JOptionPane.showMessageDialog(this,"Error deleting band member: " +e.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+    }
+    }                                     
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {                                      
+   JFrame frame=new JFrame("Album Table Management");
+frame.setSize(600,400);
+frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+frame.setLayout(new BorderLayout());
+
+JTextArea textArea=new JTextArea();
+textArea.setEditable(false);
+
+try{String query="SELECT * FROM album";
+    Statement stmt=connection.createStatement();
+    ResultSet rs=stmt.executeQuery(query);
+
+    StringBuilder res=new StringBuilder("Albums:\n");
+    while(rs.next()){
+        res.append("ID: ").append(rs.getInt("AlbumID"))
+           .append(", Title: ").append(rs.getString("Title"))
+           .append(", ArtistID: ").append(rs.getString("ArtistID"))
+           .append(", GenreID: ").append(rs.getString("GenreID"))
+           .append(", CompanyID: ").append(rs.getString("CompanyID"))
+           .append(", ProducerID: ").append(rs.getString("ProducerID"))
+           .append("\n");
+    }
+    textArea.setText(res.toString());
+
+    rs.close();
+    stmt.close();
+
+}
+catch(SQLException exc){
+    JOptionPane.showMessageDialog(this,"Error executing query: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+    return;
+}
+JScrollPane scrollPane=new JScrollPane(textArea);
+frame.add(scrollPane,BorderLayout.CENTER);
+
+JPanel buttpanel=new JPanel();
+JButton insertbutton=new JButton("Insert");
+JButton updatebutton=new JButton("Update");
+JButton deletebutton=new JButton("Delete");
+JButton okbutton=new JButton("OK");
+
+buttpanel.add(insertbutton);
+buttpanel.add(updatebutton);
+buttpanel.add(deletebutton);
+buttpanel.add(okbutton);
+frame.add(buttpanel,BorderLayout.SOUTH);
+
+insertbutton.addActionListener(exc->insertAlbum());
+updatebutton.addActionListener(exc->updateAlbum());
+deletebutton.addActionListener(exc->deleteAlbum());
+
+okbutton.addActionListener(exc->{frame.dispose();
+    new NewJFrame().setVisible(true);
+});
+frame.setVisible(true);
+}
+
+private boolean isValidForeignKey(String tableName,String columnName,String value) throws SQLException{
+    String query="SELECT COUNT(*) FROM "+tableName+" WHERE "+columnName+" = ?";
+    PreparedStatement pstmt=connection.prepareStatement(query);
+    pstmt.setInt(1,Integer.parseInt(value));
+    ResultSet rs=pstmt.executeQuery();
+    rs.next();
+    return rs.getInt(1)>0;
+}
+
+private void insertAlbum(){
+    String title=JOptionPane.showInputDialog(this,"Enter Title:");
+    String artistID=JOptionPane.showInputDialog(this,"Enter ArtistID:");
+    String genreID=JOptionPane.showInputDialog(this,"Enter GenreID:");
+    String companyID=JOptionPane.showInputDialog(this,"Enter CompanyID:");
+    String producerID=JOptionPane.showInputDialog(this,"Enter ProducerID:");
+
+    if(title==null||artistID==null||genreID==null||companyID==null||producerID==null||
+       title.trim().isEmpty()||artistID.trim().isEmpty()||genreID.trim().isEmpty()||companyID.trim().isEmpty()||producerID.trim().isEmpty()){
+        JOptionPane.showMessageDialog(this,"All fields are required!","Input Error",JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+    try{String query="INSERT INTO album (Title, ArtistID, GenreID, CompanyID, ProducerID) VALUES (?, ?, ?, ?, ?)";
+        PreparedStatement pstmt=connection.prepareStatement(query);
+        pstmt.setString(1,title);
+        pstmt.setInt(2,Integer.parseInt(artistID));
+        pstmt.setInt(3,Integer.parseInt(genreID));
+        pstmt.setInt(4,Integer.parseInt(companyID));
+        pstmt.setInt(5,Integer.parseInt(producerID));
+        pstmt.executeUpdate();
+
+        JOptionPane.showMessageDialog(this,"Album inserted successfully!");
+    }
+catch(SQLException exc){
+        JOptionPane.showMessageDialog(this,"Error inserting album: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+    }
+}
+
+private void updateAlbum(){
+    String albumID=JOptionPane.showInputDialog(this,"Enter AlbumID to update:");
+    String newTitle=JOptionPane.showInputDialog(this,"Enter new Title:");
+
+    if(albumID==null||newTitle==null||albumID.trim().isEmpty()||newTitle.trim().isEmpty()){
+        JOptionPane.showMessageDialog(this,"All fields are required!","Input Error",JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+    try{String query="UPDATE album SET Title = ? WHERE AlbumID = ?";
+        PreparedStatement pstmt=connection.prepareStatement(query);
+        pstmt.setString(1,newTitle);
+        pstmt.setInt(2,Integer.parseInt(albumID));
+        pstmt.executeUpdate();
+        JOptionPane.showMessageDialog(this,"Album updated successfully!");
+    }catch(SQLException exc){
+        JOptionPane.showMessageDialog(this,"Error updating album: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+    }
+}
+private void deleteAlbum(){
+    String albumID=JOptionPane.showInputDialog(null,"Enter AlbumID to delete:");
+
+    if(albumID==null||albumID.trim().isEmpty()){
+        JOptionPane.showMessageDialog(null,"AlbumID is required to delete!","Input Error",JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+    try{String query="DELETE FROM album WHERE AlbumID = ?";
+        PreparedStatement pstmt=connection.prepareStatement(query);
+        pstmt.setInt(1,Integer.parseInt(albumID));
+        pstmt.executeUpdate();
+
+        JOptionPane.showMessageDialog(null,"Album deleted successfully!");
+    }catch(SQLException exc){
+        JOptionPane.showMessageDialog(null,"Error deleting album: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+    }
+
+
+    }                                     
+
+    private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {                                      
+JFrame frame=new JFrame("Concert Table Management");
+    frame.setSize(900,600);
+   frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    frame.setLayout(new BorderLayout());
+
+JTextArea textArea=new JTextArea();
+textArea.setEditable(false);
+
+try{String query="SELECT * FROM concert";
+    Statement stmt=connection.createStatement();
+    ResultSet rs=stmt.executeQuery(query);
+
+    StringBuilder res=new StringBuilder("Concerts:\n");
+    while(rs.next()){
+        res.append("ConcertID: ").append(rs.getInt("ConcertID"))
+              .append(", ArtistID: ").append(rs.getInt("ArtistID"))
+                .append(", ConcertDate: ").append(rs.getDate("ConcertDate"))
+                .append(", ConcertStatus: ").append(rs.getString("ConcertStatus"))
+                .append(", RequiredCapacity: ").append(rs.getInt("RequiredCapacity"))
+                .append(", VenueID: ").append(rs.getInt("VenueID"))
+              .append("\n");
+    }
+    textArea.setText(res.toString());
+
+    rs.close();
+    stmt.close();}
+catch(SQLException exc){
+    JOptionPane.showMessageDialog(this,"Error executing query: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+    return;
+}
+
+JScrollPane scrollPane=new JScrollPane(textArea);
+frame.add(scrollPane,BorderLayout.CENTER);
+
+JPanel buttpanel=new JPanel();
+JButton insertbutton=new JButton("Insert");
+JButton updatebutton=new JButton("Update");
+JButton deletebutton=new JButton("Delete");
+JButton okbutton=new JButton("OK");
+
+buttpanel.add(insertbutton);
+buttpanel.add(updatebutton);
+buttpanel.add(deletebutton);
+buttpanel.add(okbutton);
+frame.add(buttpanel,BorderLayout.SOUTH);
+
+insertbutton.addActionListener(e->insertConcert());
+updatebutton.addActionListener(e->updateConcert());
+deletebutton.addActionListener(e->deleteConcert());
+
+okbutton.addActionListener(exc->{frame.dispose();
+    new NewJFrame().setVisible(true);});
+
+frame.setVisible(true);
+}
+
+private void insertConcert(){
+    String artistIDStr=JOptionPane.showInputDialog(this,"Enter the ArtistID:");
+    String concertDateStr=JOptionPane.showInputDialog(this,"Enter the Concert Date(YYYY-MM-DD):");
+    String concertStatus=JOptionPane.showInputDialog(this,"Enter the Concert Status(SCHEDULED, COMPLETED, CANCELED):");
+    String requiredCapacityStr=JOptionPane.showInputDialog(this,"Enter the Required Capacity:");
+    String venueIDStr=JOptionPane.showInputDialog(this,"Enter the VenueID (optional):");
+
+    if(artistIDStr==null||concertDateStr==null||concertStatus==null||requiredCapacityStr==null){
+        JOptionPane.showMessageDialog(this,"Operation canceled.","Cancel",JOptionPane.INFORMATION_MESSAGE);
+        return;}
+    try{String query="INSERT INTO concert (ArtistID, ConcertDate, ConcertStatus, RequiredCapacity, VenueID) VALUES (?, ?, ?, ?, ?)";
+        PreparedStatement pstmt=connection.prepareStatement(query);
+        pstmt.setInt(1,Integer.parseInt(artistIDStr));
+        pstmt.setDate(2,Date.valueOf(concertDateStr));
+        pstmt.setString(3,concertStatus);
+        pstmt.setInt(4,Integer.parseInt(requiredCapacityStr));
+
+        if(venueIDStr!=null&&!venueIDStr.trim().isEmpty()){
+            pstmt.setInt(5,Integer.parseInt(venueIDStr));
+        }
+else{
+            pstmt.setNull(5,java.sql.Types.INTEGER); 
+        }
+        pstmt.executeUpdate();
+        JOptionPane.showMessageDialog(this,"Concert inserted successfully!");
+    }
+catch(SQLException exc){
+        JOptionPane.showMessageDialog(this,"Error inserting concert: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+    }
+}
+
+private void updateConcert(){
+String concertIDStr=JOptionPane.showInputDialog(this,"Enter ConcertID to update:");
+ String artistIDStr=JOptionPane.showInputDialog(this,"Enter new ArtistID:");
+  String concertDateStr=JOptionPane.showInputDialog(this,"Enter new Concert Date (YYYY-MM-DD):");
+  String concertStatus=JOptionPane.showInputDialog(this,"Enter new Concert Status (SCHEDULED, COMPLETED, CANCELED):");
+   String requiredCapacityStr=JOptionPane.showInputDialog(this,"Enter new Required Capacity:");
+   String venueIDStr=JOptionPane.showInputDialog(this,"Enter new VenueID (optional):");
+
+    if(concertIDStr==null||artistIDStr==null||concertDateStr==null||concertStatus==null||requiredCapacityStr==null){
+        JOptionPane.showMessageDialog(this,"Operation canceled.","Cancel",JOptionPane.INFORMATION_MESSAGE);
+        return;
+    }
+
+ try{String query="UPDATE concert SET ArtistID = ?, ConcertDate = ?, ConcertStatus = ?, RequiredCapacity = ?, VenueID = ? WHERE ConcertID = ?";
+        PreparedStatement pstmt=connection.prepareStatement(query);
+        pstmt.setInt(1,Integer.parseInt(artistIDStr));
+        pstmt.setDate(2,Date.valueOf(concertDateStr));
+        pstmt.setString(3,concertStatus);
+        pstmt.setInt(4,Integer.parseInt(requiredCapacityStr));
+
+        if(venueIDStr!=null&&!venueIDStr.trim().isEmpty()){
+            pstmt.setInt(5,Integer.parseInt(venueIDStr));
+        }
+else{
+            pstmt.setNull(5,java.sql.Types.INTEGER); // For NULL VenueID
+        }
+
+        pstmt.setInt(6,Integer.parseInt(concertIDStr));
+        pstmt.executeUpdate();
+
+        JOptionPane.showMessageDialog(this,"Concert updated successfully!");
+    }
+catch(SQLException exc){
+        JOptionPane.showMessageDialog(this,"Error updating concert: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+    }
+}
+private void deleteConcert(){
+    String concertIDStr=JOptionPane.showInputDialog(this,"Enter ConcertID to delete:");
+
+    if(concertIDStr==null||concertIDStr.trim().isEmpty()){
+        JOptionPane.showMessageDialog(this,"Operation canceled.","Cancel",JOptionPane.INFORMATION_MESSAGE);
+        return;
+    }
+
+    try{String query="DELETE FROM concert WHERE ConcertID = ?";
+        PreparedStatement pstmt=connection.prepareStatement(query);
+        pstmt.setInt(1,Integer.parseInt(concertIDStr));
+        pstmt.executeUpdate();
+
+        JOptionPane.showMessageDialog(this,"Concert deleted successfully!");
+    }
+catch(SQLException exc){
+        JOptionPane.showMessageDialog(this,"Error deleting concert: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+    }
+
+
+    }                                     
+
+    private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {                                      
+      JFrame frame=new JFrame("DBA Table Management");
+        frame.setSize(900,600);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.setLayout(new BorderLayout());
+
+        JTextArea textArea=new JTextArea();
+        textArea.setEditable(false);
+
+        try{
+            String query="SELECT * FROM DBA";
+            Statement stmt=connection.createStatement();
+            ResultSet rs=stmt.executeQuery(query);
+
+            StringBuilder res=new StringBuilder("DBA Records:\n");
+            while(rs.next()){
+                res.append("DBAID: ").append(rs.getInt("DBAID"))
+                   .append(", UserName: ").append(rs.getString("UserName"))
+                    .append(", Start Date: ").append(rs.getDate("start_date"))
+                    .append(", End Date: ").append(rs.getDate("end_date"))
+                    .append("\n");
+            }
+            textArea.setText(res.toString());
+
+            rs.close();
+            stmt.close();
+        } 
+    catch(SQLException exc){
+            JOptionPane.showMessageDialog(frame,"Error executing query: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        JScrollPane scrollPane=new JScrollPane(textArea);
+        frame.add(scrollPane,BorderLayout.CENTER);
+
+        JPanel buttpanel=new JPanel();
+        JButton insertbutton=new JButton("Insert");
+        JButton updatebutton=new JButton("Update");
+        JButton deletebutton=new JButton("Delete");
+        JButton okbutton=new JButton("OK");
+
+        buttpanel.add(insertbutton);
+        buttpanel.add(updatebutton);
+        buttpanel.add(deletebutton);
+        buttpanel.add(okbutton);
+        frame.add(buttpanel,BorderLayout.SOUTH);
+
+        insertbutton.addActionListener(e->insertDBA());
+        updatebutton.addActionListener(e->updateDBA());
+        deletebutton.addActionListener(e->deleteDBA());
+
+        okbutton.addActionListener(e->{frame.dispose();new NewJFrame().setVisible(true);});
+        frame.setVisible(true);
+    }
+
+    private void insertDBA(){
+        String userName=JOptionPane.showInputDialog(null,"Enter the UserName:");
+        String startDate=JOptionPane.showInputDialog(null,"Enter the Start Date(YYYY-MM-DD):");
+        String endDate=JOptionPane.showInputDialog(null,"Enter the End Date(YYYY-MM-DD):");
+
+        if(userName==null||userName.trim().isEmpty()||startDate==null||startDate.trim().isEmpty()){
+            JOptionPane.showMessageDialog(null,"UserName and Start Date are required!","Input Error",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+ try{String query="INSERT INTO DBA (UserName, start_date, end_date) VALUES (?, ?, ?)";
+            PreparedStatement pstmt=connection.prepareStatement(query);
+            pstmt.setString(1,userName);
+            pstmt.setDate(2,Date.valueOf(startDate));
+            pstmt.setDate(3,Date.valueOf(endDate));
+            pstmt.executeUpdate();
+            JOptionPane.showMessageDialog(null,"DBA inserted successfully!");
+        } catch(SQLException exc){
+            JOptionPane.showMessageDialog(null,"Error inserting DBA: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+        }
+    }
+   private void updateDBA(){
+        String dbaID=JOptionPane.showInputDialog(null,"Enter the DBAID to update:");
+        String userName=JOptionPane.showInputDialog(null,"Enter the new UserName:");
+        String startDate=JOptionPane.showInputDialog(null,"Enter the new Start Date(YYYY-MM-DD):");
+        String endDate=JOptionPane.showInputDialog(null,"Enter the new End Date(YYYY-MM-DD):");
+
+if(dbaID==null||dbaID.trim().isEmpty()||userName==null||startDate==null||startDate.trim().isEmpty()){
+            JOptionPane.showMessageDialog(null,"DBAID, UserName, and Start Date are required!","Input Error",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        try{ String query="UPDATE DBA SET UserName=?, start_date=?, end_date=? WHERE DBAID=?";
+            PreparedStatement pstmt=connection.prepareStatement(query);
+            pstmt.setString(1,userName);
+            pstmt.setDate(2,Date.valueOf(startDate));
+            pstmt.setDate(3,Date.valueOf(endDate));
+            pstmt.setInt(4,Integer.parseInt(dbaID));
+            pstmt.executeUpdate();
+            JOptionPane.showMessageDialog(null,"DBA updated successfully!");
+        } catch(SQLException exc){
+            JOptionPane.showMessageDialog(null,"Error updating DBA: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    private void deleteDBA(){
+        String dbaID=JOptionPane.showInputDialog(null,"Enter the DBAID to delete:");
+
+        if(dbaID==null||dbaID.trim().isEmpty()){
+            JOptionPane.showMessageDialog(null,"DBAID is required!","Input Error",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        try{ String query="DELETE FROM DBA WHERE DBAID=?";
+            PreparedStatement pstmt=connection.prepareStatement(query);
+            pstmt.setInt(1,Integer.parseInt(dbaID));
+            pstmt.executeUpdate();
+            JOptionPane.showMessageDialog(null,"DBA deleted successfully!");
+        } 
+   catch(SQLException exc){
+            JOptionPane.showMessageDialog(null,"Error deleting DBA: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+        }
+    
+    }                                     
+
+    private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {                                      
+ JFrame frame=new JFrame("DBAlog Table Management");
+     frame.setSize(800,500);
+     frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+     frame.setLayout(new BorderLayout());
+
+        JTextArea textArea=new JTextArea();
+        textArea.setEditable(false);
+
+        try{
+            String query="SELECT * FROM DBAlog";
+            Statement stmt=connection.createStatement();
+            ResultSet rs=stmt.executeQuery(query);
+
+            StringBuilder res=new StringBuilder("DBA Logs:\n");
+            while(rs.next()){
+                res.append("LogID: ").append(rs.getInt("LogID"))
+                   .append(", USERNAME: ").append(rs.getString("USERNAME"))
+                   .append(", DETAILS: ").append(rs.getString("DETAILS"))
+                   .append(", ActionDate: ").append(rs.getTimestamp("ActionDate"))
+                   .append("\n");
+            }textArea.setText(res.toString());
+
+            rs.close();
+            stmt.close();
+        }
+catch(SQLException e){
+            JOptionPane.showMessageDialog(this,"Error executing query: "+e.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+        return;
+        }
+
+        JScrollPane scrollPane=new JScrollPane(textArea);
+        frame.add(scrollPane,BorderLayout.CENTER);
+
+        JPanel buttpanel=new JPanel();
+        JButton insertbutton=new JButton("Insert");
+        JButton updatebutton=new JButton("Update");
+        JButton deletebutton=new JButton("Delete");
+        JButton okbutton=new JButton("OK");
+
+        buttpanel.add(insertbutton);
+        buttpanel.add(updatebutton);
+        buttpanel.add(deletebutton);
+        buttpanel.add(okbutton);
+        frame.add(buttpanel,BorderLayout.SOUTH);
+
+        insertbutton.addActionListener(e->insertDBAlog());
+        updatebutton.addActionListener(e->updateDBAlog());
+        deletebutton.addActionListener(e->deleteDBAlog());
+
+        okbutton.addActionListener(e->{frame.dispose();
+            new NewJFrame().setVisible(true);});
+        frame.setVisible(true);
+    }
+
+    private void insertDBAlog(){
+        String username=JOptionPane.showInputDialog(this,"Enter USERNAME:");
+        String details=JOptionPane.showInputDialog(this,"Enter DETAILS:");
+
+        if(username==null||username.trim().isEmpty()){
+            JOptionPane.showMessageDialog(this,"USERNAME is required!","Input Error",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        try{String query="INSERT INTO DBAlog (USERNAME, DETAILS) VALUES (?, ?)";
+            PreparedStatement pstmt=connection.prepareStatement(query);
+            pstmt.setString(1,username);
+            pstmt.setString(2,details);
+            pstmt.executeUpdate();
+
+            JOptionPane.showMessageDialog(this,"DBA log inserted successfully!");
+        }
+catch(SQLException e){
+            JOptionPane.showMessageDialog(this,"Error inserting the DBA log: "+e.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+}
+}
+
+    private void updateDBAlog(){
+        String logIDStr=JOptionPane.showInputDialog(this,"Enter the LogID to update:");
+        String newDetails=JOptionPane.showInputDialog(this,"Enter the new DETAILS:");
+
+        if(logIDStr==null||newDetails==null||logIDStr.trim().isEmpty()||newDetails.trim().isEmpty()){
+            JOptionPane.showMessageDialog(this,"Inputs cannot be empty!","Input Error",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        try{int logID=Integer.parseInt(logIDStr);
+
+            String query="UPDATE DBAlog SET DETAILS = ? WHERE LogID = ?";
+            PreparedStatement pstmt=connection.prepareStatement(query);
+            pstmt.setString(1,newDetails);
+            pstmt.setInt(2,logID);
+            pstmt.executeUpdate();
+
+            JOptionPane.showMessageDialog(this,"The DBA log updated successfully!");
+}
+        catch(SQLException exc){
+            JOptionPane.showMessageDialog(this,"Error updating DBA log: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+}}
+    private void deleteDBAlog(){
+        String logIDStr=JOptionPane.showInputDialog(null,"Enter the  LogID to delete:");
+
+        if(logIDStr==null||logIDStr.trim().isEmpty()){
+            JOptionPane.showMessageDialog(null,"LogID cannot be empty!","Input Error",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+    try{int logID=Integer.parseInt(logIDStr);
+
+            String query="DELETE FROM DBAlog WHERE LogID = ?";
+            PreparedStatement pstmt=connection.prepareStatement(query);
+            pstmt.setInt(1,logID);
+            pstmt.executeUpdate();
+
+            JOptionPane.showMessageDialog(null,"DBA log deleted successfully!");
+        }
+catch(SQLException exc){
+    JOptionPane.showMessageDialog(null,"Error deleting DBA log: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+        }
+    
+
+
+    }                                     
+
+    private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {                                       
+JFrame frame=new JFrame("Genre Table Management");
+   frame.setSize(600,400);
+   frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+   frame.setLayout(new BorderLayout());
+
+        JTextArea textArea=new JTextArea();
+        textArea.setEditable(false);
+
+        try{String query="SELECT * FROM genre";
+            Statement stmt=connection.createStatement();
+            ResultSet rs=stmt.executeQuery(query);
+
+            StringBuilder res=new StringBuilder("Genres:\n");
+            while(rs.next()){
+                res.append("Genre ID: ").append(rs.getInt("GenreID"))
+                   .append(", Genre Name: ").append(rs.getString("GenreName"))
+                   .append("\n");
+            }textArea.setText(res.toString());
+            rs.close();
+            stmt.close();
+        }
+catch(SQLException exc){
+            JOptionPane.showMessageDialog(this,"Error executing query: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+            return;}
+
+        JScrollPane scrollPane=new JScrollPane(textArea);
+        frame.add(scrollPane,BorderLayout.CENTER);
+
+        JPanel buttpanel=new JPanel();
+        JButton insertbutton=new JButton("Insert");
+        JButton updatebutton=new JButton("Update");
+        JButton deletebutton=new JButton("Delete");
+        JButton okbutton=new JButton("OK");
+
+        buttpanel.add(insertbutton);
+        buttpanel.add(updatebutton);
+        buttpanel.add(deletebutton);
+        buttpanel.add(okbutton);
+        frame.add(buttpanel,BorderLayout.SOUTH);
+
+        insertbutton.addActionListener(e->insertGenre());
+        updatebutton.addActionListener(e->updateGenre());
+        deletebutton.addActionListener(e->deleteGenre());
+
+        okbutton.addActionListener(e->{frame.dispose();new NewJFrame().setVisible(true);});
+frame.setVisible(true);
+    }
+
+private void insertGenre(){
+        String genreName=JOptionPane.showInputDialog(this,"Enter Genre Name:");
+
+if(genreName==null||genreName.trim().isEmpty()){
+        JOptionPane.showMessageDialog(this,"Genre Name cannot be empty!","Input Error",JOptionPane.ERROR_MESSAGE);
+        return;
+}
+
+    try{String query="INSERT INTO genre (GenreName) VALUES (?)";
+            PreparedStatement pstmt=connection.prepareStatement(query);
+            pstmt.setString(1,genreName);
+            pstmt.executeUpdate();
+
+            JOptionPane.showMessageDialog(this,"The Genre inserted successfully!");
+        }
+catch(SQLException exc){
+            JOptionPane.showMessageDialog(this,"Error inserting genre: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+        }}
+    private void updateGenre(){
+        String genreIDStr=JOptionPane.showInputDialog(this,"Enter the GenreID to update:");
+        String newGenreName=JOptionPane.showInputDialog(this,"Enter the new Genre Name:");
+
+if(genreIDStr==null||newGenreName==null||genreIDStr.trim().isEmpty()||newGenreName.trim().isEmpty()){
+            JOptionPane.showMessageDialog(this,"Inputs cannot be empty!","Input Error",JOptionPane.ERROR_MESSAGE);
+        return;
+        }
+
+    try{int genreID=Integer.parseInt(genreIDStr);
+
+            String query="UPDATE genre SET GenreName = ? WHERE GenreID = ?";
+            PreparedStatement pstmt=connection.prepareStatement(query);
+            pstmt.setString(1,newGenreName);
+            pstmt.setInt(2,genreID);
+            pstmt.executeUpdate();
+
+            JOptionPane.showMessageDialog(this,"The Genre updated successfully!");
+        }
+catch(SQLException exc){
+            JOptionPane.showMessageDialog(this,"Error updating genre: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+        }}
+
+    private void deleteGenre(){
+        String genreIDStr=JOptionPane.showInputDialog(null,"Enter the GenreID to delete:");
+
+        if(genreIDStr==null||genreIDStr.trim().isEmpty()){
+            JOptionPane.showMessageDialog(null,"GenreID cannot be empty!","Input Error",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        try{ int genreID=Integer.parseInt(genreIDStr);
+
+            String query="DELETE FROM genre WHERE GenreID = ?";
+            PreparedStatement pstmt=connection.prepareStatement(query);
+            pstmt.setInt(1,genreID);
+            pstmt.executeUpdate();
+
+            JOptionPane.showMessageDialog(null,"Genre deleted successfully!");
+        }
+catch(SQLException eXC){
+            JOptionPane.showMessageDialog(null,"Error deleting genre: "+eXC.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+        }
+    
+    }                                      
+
+    private void jButton11MouseClicked(java.awt.event.MouseEvent evt) {                                       
+JFrame frame=new JFrame("Person Table Management");
+    frame.setSize(800,500);
+    frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+   frame.setLayout(new BorderLayout());
+
+    JTextArea textArea=new JTextArea();
+    textArea.setEditable(false);
+
+try{String query="SELECT * FROM person";
+            Statement stmt=connection.createStatement();
+            ResultSet rs=stmt.executeQuery(query);
+
+        StringBuilder res=new StringBuilder("Persons:\n");
+    while(rs.next()){res.append("PersonID: ").append(rs.getInt("PersonID"))
+                   .append(", First Name: ").append(rs.getString("FirstName"))
+                    .append(", Last Name: ").append(rs.getString("LastName"))
+                    .append(", BirthDate: ").append(rs.getDate("BirthDate"))
+                    .append(", Country: ").append(rs.getString("Country"))
+                    .append(", Alias: ").append(rs.getString("Alias"))
+                    .append(", Is Solo Artist: ").append(rs.getBoolean("isSoloArtist"))
+                    .append(", ArtistID: ").append(rs.getInt("ArtistID"))
+                     .append("\n");}textArea.setText(res.toString());
+rs.close();
+stmt.close();
+}
+catch(SQLException exc){
+            JOptionPane.showMessageDialog(this,"Error executing query: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+            return;}
+
+        JScrollPane scrollPane=new JScrollPane(textArea);
+        frame.add(scrollPane,BorderLayout.CENTER);
+
+        JPanel buttpanel=new JPanel();
+        JButton insertbutton=new JButton("Insert");
+        JButton updatebutton=new JButton("Update");
+        JButton deletebutton=new JButton("Delete");
+        JButton okbutton=new JButton("OK");
+
+        buttpanel.add(insertbutton);
+        buttpanel.add(updatebutton);
+        buttpanel.add(deletebutton);
+        buttpanel.add(okbutton);
+        frame.add(buttpanel,BorderLayout.SOUTH);
+
+        insertbutton.addActionListener(e->insertPerson());
+        updatebutton.addActionListener(e->updatePerson());
+        deletebutton.addActionListener(e->deletePerson());
+
+        okbutton.addActionListener(e->{frame.dispose();
+            new NewJFrame().setVisible(true);});
+        frame.setVisible(true);
+    }
+private void insertPerson(){
+        String firstName=JOptionPane.showInputDialog(this,"Enter the First Name:");
+        String lastName=JOptionPane.showInputDialog(this,"Enter the Last Name:");
+        String birthDate=JOptionPane.showInputDialog(this,"Enter the Birth Date(YYYY-MM-DD):");
+        String country=JOptionPane.showInputDialog(this,"Enter the Country:");
+        String alias=JOptionPane.showInputDialog(this,"Enter the Alias:");
+        String isSoloArtist=JOptionPane.showInputDialog(this,"Is Solo Artist(1 for Yes, 0 for No):");
+        String artistID=JOptionPane.showInputDialog(this,"Enter the ArtistID:");
+
+if(firstName==null||lastName==null||artistID==null||firstName.trim().isEmpty()||lastName.trim().isEmpty()||artistID.trim().isEmpty()){
+            JOptionPane.showMessageDialog(this,"Required fields cannot be empty!","Input Error",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+try{String query="INSERT INTO person (FirstName, LastName, BirthDate, Country, Alias, isSoloArtist, ArtistID) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            PreparedStatement pstmt=connection.prepareStatement(query);
+            pstmt.setString(1,firstName);
+            pstmt.setString(2,lastName);
+            pstmt.setString(3,birthDate.isEmpty()?null:birthDate);
+            pstmt.setString(4,country.isEmpty()?"unknown":country);
+            pstmt.setString(5,alias.isEmpty()?"unknown":alias);
+            pstmt.setInt(6,Integer.parseInt(isSoloArtist));
+            pstmt.setInt(7,Integer.parseInt(artistID));
+            pstmt.executeUpdate();
+
+JOptionPane.showMessageDialog(this,"Person inserted successfully!");
+}
+catch(SQLException e){
+        JOptionPane.showMessageDialog(this,"Error inserting person: "+e.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+}}
+
+    private void updatePerson(){
+        String personIDStr=JOptionPane.showInputDialog(this,"Enter PersonID to update:");
+        String newFirstName=JOptionPane.showInputDialog(this,"Enter new First Name:");
+        String newLastName=JOptionPane.showInputDialog(this,"Enter new Last Name:");
+
+    if(personIDStr==null||newFirstName==null||newLastName==null||personIDStr.trim().isEmpty()||newFirstName.trim().isEmpty()||newLastName.trim().isEmpty()){
+            JOptionPane.showMessageDialog(this,"Inputs cannot be empty!","Input Error",JOptionPane.ERROR_MESSAGE);
+            return;}
+
+try{int personID=Integer.parseInt(personIDStr);
+
+        String query="UPDATE person SET FirstName = ?, LastName = ? WHERE PersonID = ?";
+            PreparedStatement pstmt=connection.prepareStatement(query);
+            pstmt.setString(1,newFirstName);
+            pstmt.setString(2,newLastName);
+            pstmt.setInt(3,personID);
+            pstmt.executeUpdate();
+
+        JOptionPane.showMessageDialog(this,"Person updated successfully!");
+        }
+catch(SQLException exc){
+            JOptionPane.showMessageDialog(this,"Error updating person: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+}}
+    private void deletePerson(){
+        String personIDStr=JOptionPane.showInputDialog(null,"Enter the PersonID to delete:");
+
+        if(personIDStr==null||personIDStr.trim().isEmpty()){
+            JOptionPane.showMessageDialog(null,"PersonID cannot be empty!","Input Error",JOptionPane.ERROR_MESSAGE);
+        return;
+}
+try{int personID=Integer.parseInt(personIDStr);
+
+            String query="DELETE FROM person WHERE PersonID = ?";
+            PreparedStatement pstmt=connection.prepareStatement(query);
+            pstmt.setInt(1,personID);
+            pstmt.executeUpdate();
+
+            JOptionPane.showMessageDialog(null,"Person deleted successfully!");
+}
+catch(SQLException exc){
+            JOptionPane.showMessageDialog(null,"Error deleting person: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+        }
+    
+    }                                      
+
+    private void jButton16MouseClicked(java.awt.event.MouseEvent evt) {                                       
+   
+JFrame frame=new JFrame("Track Table Management");
+    frame.setSize(900,600);
+    frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    frame.setLayout(new BorderLayout());
+
+        JTextArea textArea=new JTextArea();
+        textArea.setEditable(false);
+
+        try {
+            String query="SELECT * FROM track";
+            Statement stmt=connection.createStatement();
+            ResultSet rs=stmt.executeQuery(query);
+
+            StringBuilder res=new StringBuilder("Tracks:\n");
+            while(rs.next()){
+                res.append("TrackID: ").append(rs.getInt("TrackID"))
+                    .append(", Title: ").append(rs.getString("Title"))
+                    .append(", AlbumID: ").append(rs.getInt("AlbumID"))
+                    .append(", TrackLength: ").append(rs.getTime("TrackLength"))
+                    .append(", TrackNo: ").append(rs.getInt("TrackNo"))
+                    .append("\n");} textArea.setText(res.toString());
+ rs.close();
+            stmt.close();
+        } 
+catch(SQLException exc){
+            JOptionPane.showMessageDialog(null,"Error executing query: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        JScrollPane scrollPane=new JScrollPane(textArea);
+        frame.add(scrollPane,BorderLayout.CENTER);
+
+        JPanel buttpanel=new JPanel();
+        JButton insertbutton=new JButton("Insert");
+        JButton updatebutton=new JButton("Update");
+        JButton deletebutton=new JButton("Delete");
+        JButton okButton=new JButton("OK");
+
+        buttpanel.add(insertbutton);
+        buttpanel.add(updatebutton);
+        buttpanel.add(deletebutton);
+        buttpanel.add(okButton);
+        frame.add(buttpanel,BorderLayout.SOUTH);
+
+        insertbutton.addActionListener(e->insertTrack());
+        updatebutton.addActionListener(e->updateTrack());
+        deletebutton.addActionListener(e->deleteTrack());
+
+        okButton.addActionListener(e->{ frame.dispose();
+            new NewJFrame().setVisible(true); });
+frame.setVisible(true);
+    }
+private void insertTrack() {
+        String title=JOptionPane.showInputDialog(null,"Enter the Track Title:");
+        String albumIDStr=JOptionPane.showInputDialog(null,"Enter the AlbumID:");
+        String trackLengthStr=JOptionPane.showInputDialog(null,"Enter the  Track Length (HH:MM:SS):");
+        String trackNoStr=JOptionPane.showInputDialog(null,"Enter the Track Number:");
+        String lyrics=JOptionPane.showInputDialog(null,"Enter the Lyrics:");
+
+   if(title==null||albumIDStr==null||trackLengthStr==null||trackNoStr==null) {
+        JOptionPane.showMessageDialog(null,"Operation canceled.","Cancel",JOptionPane.INFORMATION_MESSAGE);
+        return;}
+
+ try{String query="INSERT INTO track (Title, AlbumID, TrackLength, TrackNo, Lyrics) VALUES (?, ?, ?, ?, ?)";
+            PreparedStatement pstmt=connection.prepareStatement(query);
+            pstmt.setString(1,title);
+            pstmt.setInt(2,Integer.parseInt(albumIDStr));
+            pstmt.setTime(3,Time.valueOf(trackLengthStr));
+            pstmt.setInt(4,Integer.parseInt(trackNoStr));
+            pstmt.setString(5,lyrics);
+            pstmt.executeUpdate();
+
+            JOptionPane.showMessageDialog(null,"Track inserted successfully!");
+} 
+catch(SQLException exc){
+            JOptionPane.showMessageDialog(null,"Error inserting track: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+        }}
+
+private void updateTrack(){
+        String trackIDStr=JOptionPane.showInputDialog(null,"Enter TrackID to update:");
+        String title=JOptionPane.showInputDialog(null,"Enter new Track Title:");
+        String albumIDStr=JOptionPane.showInputDialog(null,"Enter new AlbumID:");
+        String trackLengthStr=JOptionPane.showInputDialog(null,"Enter new Track Length (HH:MM:SS):");
+        String trackNoStr=JOptionPane.showInputDialog(null,"Enter new Track Number:");
+        String lyrics=JOptionPane.showInputDialog(null,"Enter new Lyrics:");
+
+        if(trackIDStr==null||trackIDStr.trim().isEmpty()||title==null||albumIDStr==null) {
+            JOptionPane.showMessageDialog(null,"Operation canceled.","Cancel",JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+
+try{String query="UPDATE track SET Title = ?, AlbumID = ?, TrackLength = ?, TrackNo = ?, Lyrics = ? WHERE TrackID = ?";
+            PreparedStatement pstmt=connection.prepareStatement(query);
+            pstmt.setString(1,title);
+            pstmt.setInt(2,Integer.parseInt(albumIDStr));
+            pstmt.setTime(3,Time.valueOf(trackLengthStr));
+            pstmt.setInt(4,Integer.parseInt(trackNoStr));
+            pstmt.setString(5,lyrics);
+            pstmt.setInt(6,Integer.parseInt(trackIDStr));
+            pstmt.executeUpdate();
+
+            JOptionPane.showMessageDialog(null,"Track updated successfully!");
+}
+catch (SQLException e) {
+            JOptionPane.showMessageDialog(null,"Error updating track: "+e.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+ }}
+
+private void deleteTrack(){
+        String trackIDStr=JOptionPane.showInputDialog(null,"Enter TrackID to delete:");
+
+        if(trackIDStr==null||trackIDStr.trim().isEmpty()){
+            JOptionPane.showMessageDialog(null,"Operation canceled.","Cancel",JOptionPane.INFORMATION_MESSAGE);
+            return;
+}
+
+try{String query="DELETE FROM track WHERE TrackID = ?";
+        PreparedStatement pstmt=connection.prepareStatement(query);
+        pstmt.setInt(1,Integer.parseInt(trackIDStr));
+        pstmt.executeUpdate();
+
+            JOptionPane.showMessageDialog(null,"Track deleted successfully!");}
+catch (SQLException exc){
+            JOptionPane.showMessageDialog(null,"Error deleting track: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+        }
+ 
+    }                                      
+
+    private void jButton13MouseClicked(java.awt.event.MouseEvent evt) {                                       
+JFrame frame=new JFrame("Producer Company Table Management");
+    frame.setSize(900,600);
+    frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    frame.setLayout(new BorderLayout());
+
+    JTextArea textArea=new JTextArea();
+    textArea.setEditable(false);
+
+try{String query="SELECT * FROM producercompany";
+            Statement stmt=connection.createStatement();
+            ResultSet rs=stmt.executeQuery(query);
+
+            StringBuilder res=new StringBuilder("Producer Companies:\n");
+            while(rs.next()){
+                res.append("ProducerID: ").append(rs.getInt("ProducerID"))
+                    .append(", RecordCompanyID: ").append(rs.getInt("RecordCompanyID"))
+                    .append(", FromDate: ").append(rs.getDate("FromDate"))
+                    .append(", ToDate: ").append(rs.getDate("ToDate"))
+                    .append("\n");}textArea.setText(res.toString());
+rs.close();
+            stmt.close();
+        }
+catch(SQLException exc){
+            JOptionPane.showMessageDialog(null,"Error executing query: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+            return;}
+
+JScrollPane scrollPane=new JScrollPane(textArea);
+        frame.add(scrollPane,BorderLayout.CENTER);
+
+        JPanel buttpanel=new JPanel();
+        JButton insertbutton=new JButton("Insert");
+        JButton updatebutton=new JButton("Update");
+        JButton deletebutton=new JButton("Delete");
+        JButton okButton=new JButton("OK");
+
+        buttpanel.add(insertbutton);
+        buttpanel.add(updatebutton);
+        buttpanel.add(deletebutton);
+        buttpanel.add(okButton);
+        frame.add(buttpanel,BorderLayout.SOUTH);
+
+        insertbutton.addActionListener(e->insertProducerCompany());
+        updatebutton.addActionListener(e->updateProducerCompany());
+        deletebutton.addActionListener(e->deleteProducerCompany());
+
+        okButton.addActionListener(e->{frame.dispose();
+            new NewJFrame().setVisible(true);});
+frame.setVisible(true);
+    }
+
+    private void insertProducerCompany(){
+        String producerIDStr=JOptionPane.showInputDialog(null,"Enter the ProducerID:");
+        String recordCompanyIDStr=JOptionPane.showInputDialog(null,"Enter the RecordCompanyID:");
+        String fromDateStr=JOptionPane.showInputDialog(null,"Enter FromDate(YYYY-MM-DD):");
+        String toDateStr=JOptionPane.showInputDialog(null,"Enter ToDate (YYYY-MM-DD):");
+
+        if(producerIDStr==null||producerIDStr.trim().isEmpty()||recordCompanyIDStr==null||recordCompanyIDStr.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null,"ProducerID and RecordCompanyID are required!","Input Error",JOptionPane.ERROR_MESSAGE);
+            return;}
+
+ try{ String query="INSERT INTO producercompany (ProducerID, RecordCompanyID, FromDate, ToDate) VALUES (?, ?, ?, ?)";
+            PreparedStatement pstmt=connection.prepareStatement(query);
+            pstmt.setInt(1,Integer.parseInt(producerIDStr));
+            pstmt.setInt(2,Integer.parseInt(recordCompanyIDStr));
+            pstmt.setDate(3,java.sql.Date.valueOf(fromDateStr));
+            if(toDateStr==null||toDateStr.trim().isEmpty()) {
+                pstmt.setNull(4,java.sql.Types.DATE);  // Set NULL for ToDate if not provided
+            } else {
+                pstmt.setDate(4,java.sql.Date.valueOf(toDateStr));
+            }
+            pstmt.executeUpdate();
+
+            JOptionPane.showMessageDialog(null,"Producer Company inserted successfully!");
+        } 
+ catch(SQLException exc){
+            JOptionPane.showMessageDialog(null,"Error inserting producer company: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+        }}
+    private void updateProducerCompany(){
+      String producerIDStr=JOptionPane.showInputDialog(null,"Enter the ProducerID:");
+        String recordCompanyIDStr=JOptionPane.showInputDialog(null,"Enter the RecordCompanyID:");
+        String fromDateStr=JOptionPane.showInputDialog(null,"Enter new FromDate (YYYY-MM-DD):");
+        String toDateStr=JOptionPane.showInputDialog(null,"Enter new ToDate (YYYY-MM-DD):");
+
+if(producerIDStr==null||producerIDStr.trim().isEmpty()||recordCompanyIDStr==null||recordCompanyIDStr.trim().isEmpty()) {
+        JOptionPane.showMessageDialog(null,"ProducerID and RecordCompanyID are required!","Input Error",JOptionPane.ERROR_MESSAGE);
+        return; }
+
+try{String query="UPDATE producercompany SET FromDate = ?, ToDate = ? WHERE ProducerID = ? AND RecordCompanyID = ?";
+            PreparedStatement pstmt=connection.prepareStatement(query);
+            pstmt.setDate(1,java.sql.Date.valueOf(fromDateStr));
+    if(toDateStr==null||toDateStr.trim().isEmpty()) {
+                pstmt.setNull(2,java.sql.Types.DATE);  // Set NULL for ToDate if not provided
+            } 
+        else{
+                pstmt.setDate(2,java.sql.Date.valueOf(toDateStr));}
+    
+            pstmt.setInt(3,Integer.parseInt(producerIDStr));
+            pstmt.setInt(4,Integer.parseInt(recordCompanyIDStr));
+            pstmt.executeUpdate();
+
+            JOptionPane.showMessageDialog(null,"Producer Company updated successfully!");
+        } 
+catch(SQLException exc){
+            JOptionPane.showMessageDialog(null,"Error updating producer company: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+}}
+
+    private void deleteProducerCompany() {
+        String producerIDStr=JOptionPane.showInputDialog(null,"Enter the ProducerID:");
+        String recordCompanyIDStr=JOptionPane.showInputDialog(null,"Enter the RecordCompanyID:");
+
+        if(producerIDStr==null||producerIDStr.trim().isEmpty()||recordCompanyIDStr==null||recordCompanyIDStr.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null,"ProducerID and RecordCompanyID are required!","Input Error",JOptionPane.ERROR_MESSAGE);
+            return;}
+
+try{String query="DELETE FROM producercompany WHERE ProducerID = ? AND RecordCompanyID = ?";
+            PreparedStatement pstmt=connection.prepareStatement(query);
+            pstmt.setInt(1,Integer.parseInt(producerIDStr));
+            pstmt.setInt(2,Integer.parseInt(recordCompanyIDStr));
+            pstmt.executeUpdate();
+
+            JOptionPane.showMessageDialog(null,"Producer Company deleted successfully!");} 
+catch(SQLException exc){
+            JOptionPane.showMessageDialog(null,"Error deleting producer company: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+        }
+         
+    }                                      
+
+    private void jButton14MouseClicked(java.awt.event.MouseEvent evt) {                                       
+ JFrame frame=new JFrame("Record Company Table Management");
+    frame.setSize(900,600);
+      frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.setLayout(new BorderLayout());
+
+        JTextArea textArea=new JTextArea();
+        textArea.setEditable(false);
+
+try{String query="SELECT * FROM recordcompany";
+            Statement stmt=connection.createStatement();
+            ResultSet rs=stmt.executeQuery(query);
+
+            StringBuilder res=new StringBuilder("Record Companies:\n");
+            while(rs.next()){
+                res.append("CompanyID: ").append(rs.getInt("CompanyID"))
+                   .append(", CompanyName: ").append(rs.getString("CompanyName"))
+                   .append(", Address: ").append(rs.getString("Adress"))
+                   .append(", Phone: ").append(rs.getString("Phone"))
+                   .append(", Email: ").append(rs.getString("Email"))
+                   .append(", BeginDate: ").append(rs.getDate("BeginDate"))
+                   .append(", EndDate: ").append(rs.getDate("EndDate"))
+                   .append("\n");} textArea.setText(res.toString());
+
+            rs.close();
+            stmt.close();}
+        catch(SQLException exc){
+            JOptionPane.showMessageDialog(null,"Error executing query: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+            return;}
+
+        JScrollPane scrollPane=new JScrollPane(textArea);
+        frame.add(scrollPane,BorderLayout.CENTER);
+
+     JPanel buttpanel=new JPanel();
+        JButton insertbutton=new JButton("Insert");
+        JButton updatebutton=new JButton("Update");
+        JButton deletebutton=new JButton("Delete");
+        JButton okButton=new JButton("OK");
+
+        buttpanel.add(insertbutton);
+        buttpanel.add(updatebutton);
+        buttpanel.add(deletebutton);
+        buttpanel.add(okButton);
+        frame.add(buttpanel,BorderLayout.SOUTH);
+
+        insertbutton.addActionListener(e->insertRecordCompany());
+        updatebutton.addActionListener(e->updateRecordCompany());
+        deletebutton.addActionListener(e->deleteRecordCompany());
+
+        okButton.addActionListener(e->{
+            frame.dispose();
+            new NewJFrame().setVisible(true);
+        });
+
+        frame.setVisible(true);
+    }
+    private void insertRecordCompany() {
+        String companyName=JOptionPane.showInputDialog(null,"Enter the CompanyName:");
+        String address=JOptionPane.showInputDialog(null,"Enter thee Address:");
+        String phone=JOptionPane.showInputDialog(null,"Enter the Phone:");
+        String email=JOptionPane.showInputDialog(null,"Enter the Email:");
+        String beginDateStr=JOptionPane.showInputDialog(null,"Enter BeginDate (YYYY-MM-DD):");
+        String endDateStr=JOptionPane.showInputDialog(null,"Enter EndDate (YYYY-MM-DD):");
+
+        if(companyName==null||companyName.trim().isEmpty()||address==null||address.trim().isEmpty()||
+           phone==null||phone.trim().isEmpty()||email==null||email.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null,"CompanyName, Address, Phone, and Email are required!","Input Error",JOptionPane.ERROR_MESSAGE);
+            return;}
+
+try{String query="INSERT INTO recordcompany (CompanyName, Adress, Phone, Email, BeginDate, EndDate) VALUES (?, ?, ?, ?, ?, ?)";
+            PreparedStatement pstmt=connection.prepareStatement(query);
+            pstmt.setString(1,companyName);
+            pstmt.setString(2,address);
+            pstmt.setString(3,phone);
+            pstmt.setString(4,email);
+            if(beginDateStr==null||beginDateStr.trim().isEmpty()) {
+                pstmt.setNull(5,java.sql.Types.DATE);
+            }
+            else{
+                pstmt.setDate(5,java.sql.Date.valueOf(beginDateStr));
+            }
+            if(endDateStr==null||endDateStr.trim().isEmpty()) {
+                pstmt.setNull(6,java.sql.Types.DATE);
+} 
+            else{
+                pstmt.setDate(6,java.sql.Date.valueOf(endDateStr));
+}
+            pstmt.executeUpdate();
+
+            JOptionPane.showMessageDialog(null,"The Record Company inserted successfully!");
+        }
+        catch(SQLException exc){
+            JOptionPane.showMessageDialog(null,"Error inserting record company: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+        }}
+    private void updateRecordCompany(){
+        String companyIDStr=JOptionPane.showInputDialog(null,"Enter the CompanyID:");
+        String newCompanyName=JOptionPane.showInputDialog(null,"Enter the new CompanyName:");
+        String newAddress=JOptionPane.showInputDialog(null,"Enter new Address:");
+        String newPhone=JOptionPane.showInputDialog(null,"Enter the new Phone:");
+        String newEmail=JOptionPane.showInputDialog(null,"Enter the new Email:");
+        String newBeginDateStr=JOptionPane.showInputDialog(null,"Enter new BeginDate(YYYY-MM-DD):");
+        String newEndDateStr=JOptionPane.showInputDialog(null,"Enter new EndDate(YYYY-MM-DD):");
+
+        if(companyIDStr==null||companyIDStr.trim().isEmpty()||newCompanyName==null||newCompanyName.trim().isEmpty()||
+           newAddress==null||newAddress.trim().isEmpty()||newPhone==null||newPhone.trim().isEmpty()|| 
+           newEmail==null||newEmail.trim().isEmpty()){
+            JOptionPane.showMessageDialog(null,"All fields except BeginDate and EndDate must be filledd!","Input Error",JOptionPane.ERROR_MESSAGE);
+            return;}
+
+ try{String query="UPDATE recordcompany SET CompanyName = ?, Adress = ?, Phone = ?, Email = ?, BeginDate = ?, EndDate = ? WHERE CompanyID = ?";
+            PreparedStatement pstmt=connection.prepareStatement(query);
+            pstmt.setString(1,newCompanyName);
+            pstmt.setString(2,newAddress);
+            pstmt.setString(3,newPhone);
+            pstmt.setString(4,newEmail);
+            if(newBeginDateStr==null||newBeginDateStr.trim().isEmpty()) {
+                pstmt.setNull(5,java.sql.Types.DATE);
+            }
+            else{
+                pstmt.setDate(5,java.sql.Date.valueOf(newBeginDateStr));
+            }
+            if(newEndDateStr==null||newEndDateStr.trim().isEmpty()) {
+                pstmt.setNull(6,java.sql.Types.DATE);
+            } 
+            else{
+                pstmt.setDate(6,java.sql.Date.valueOf(newEndDateStr));
+            }
+            pstmt.setInt(7,Integer.parseInt(companyIDStr));
+            pstmt.executeUpdate();
+
+            JOptionPane.showMessageDialog(null,"The RecordCompany updated successfully!");
+} 
+    catch(SQLException exc){
+            JOptionPane.showMessageDialog(null,"Error updating record company: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+}}
+    private void deleteRecordCompany(){
+        String companyIDStr=JOptionPane.showInputDialog(null,"Enter CompanyID to delete:");
+
+if(companyIDStr==null||companyIDStr.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null,"CompanyID is required!","Input Error",JOptionPane.ERROR_MESSAGE);
+            return;}
+try{String query="DELETE FROM recordcompany WHERE CompanyID = ?";
+            PreparedStatement pstmt=connection.prepareStatement(query);
+            pstmt.setInt(1,Integer.parseInt(companyIDStr));
+            pstmt.executeUpdate();
+
+            JOptionPane.showMessageDialog(null,"Record Company deleted successfully!");
+} 
+catch(SQLException eχψ){
+            JOptionPane.showMessageDialog(null,"Error deleting record company: "+eχψ.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+        }
+    }                                      
+
+    private void jButton15MouseClicked(java.awt.event.MouseEvent evt) {                                       
+ JFrame frame=new JFrame("Record Table Management");
+    frame.setSize(600,400);
+ frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+     frame.setLayout(new BorderLayout());
+
+        JTextArea textArea=new JTextArea();
+        textArea.setEditable(false);
+
+try{String query="SELECT * FROM records";  // Change to records table
+            Statement stmt=connection.createStatement();
+            ResultSet rs=stmt.executeQuery(query);
+
+            StringBuilder result=new StringBuilder("Records:\n");
+ while(rs.next()){
+                result.append("Record ID: ").append(rs.getInt("RecordID"))
+                      .append(", Concert ID: ").append(rs.getInt("ConcertID"))
+                      .append(", Artist Name: ").append(rs.getString("ArtistName"))
+                      .append(", Venue Name: ").append(rs.getString("VenueName"))
+                      .append(", Ticket Sold: ").append(rs.getInt("TicketSold"))
+                      .append(", Concert Date: ").append(rs.getDate("ConcertDate"))
+                      .append(", Record Status: ").append(rs.getString("RecordStatus"))
+                      .append("\n");}
+            textArea.setText(result.toString());
+
+            rs.close();
+            stmt.close();
+        }
+catch(SQLException exc){
+            JOptionPane.showMessageDialog(null,"Error executing query: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+        return;}
+
+        JScrollPane scrollPane=new JScrollPane(textArea);
+        frame.add(scrollPane,BorderLayout.CENTER);
+
+        JPanel buttonPanel=new JPanel();
+        JButton insertbutton=new JButton("Insert");
+        JButton updatebutton=new JButton("Update");
+        JButton deletebutton=new JButton("Delete");
+        JButton okButton=new JButton("OK");
+
+        buttonPanel.add(insertbutton);
+        buttonPanel.add(updatebutton);
+        buttonPanel.add(deletebutton);
+        buttonPanel.add(okButton);
+        frame.add(buttonPanel,BorderLayout.SOUTH);
+
+        insertbutton.addActionListener(e->insertRecord());
+        updatebutton.addActionListener(e->updateRecord());
+        deletebutton.addActionListener(e->deleteRecord());
+
+        okButton.addActionListener(e->{frame.dispose();
+            new NewJFrame().setVisible(true);});
+frame.setVisible(true);}
+
+private void insertRecord(){
+        String concertIDStr=JOptionPane.showInputDialog(null,"Enter the ConcertID:");
+        String artistName=JOptionPane.showInputDialog(null,"Enter the Artist Name:");
+        String venueName=JOptionPane.showInputDialog(null,"Enter the Venue Name:");
+        String ticketSoldStr=JOptionPane.showInputDialog(null,"Enter the Number of Tickets Sold:");
+        String concertDateStr=JOptionPane.showInputDialog(null,"Enter Concert Date(yyyy-mm-dd):");
+        String recordStatus="COMPLETED";
+    if(concertIDStr==null||artistName==null||venueName==null||ticketSoldStr==null||concertDateStr==null) {
+            JOptionPane.showMessageDialog(null,"Operation canceled.","Cancel",JOptionPane.INFORMATION_MESSAGE);
+        return;}
+
+try{int concertID=Integer.parseInt(concertIDStr);
+        int ticketSold=Integer.parseInt(ticketSoldStr);
+            java.sql.Date concertDate=java.sql.Date.valueOf(concertDateStr);
+
+            String query="INSERT INTO records (ConcertID, ArtistName, VenueName, TicketSold, ConcertDate, RecordStatus) VALUES (?, ?, ?, ?, ?, ?)";
+            PreparedStatement pstmt=connection.prepareStatement(query);
+            pstmt.setInt(1,concertID);
+            pstmt.setString(2,artistName);
+            pstmt.setString(3,venueName);
+            pstmt.setInt(4,ticketSold);
+            pstmt.setDate(5,concertDate);
+            pstmt.setString(6,recordStatus);
+            pstmt.executeUpdate();
+
+            JOptionPane.showMessageDialog(null,"Record inserted successfully!");
+} 
+catch(NumberFormatException exc){
+            JOptionPane.showMessageDialog(null,"Ticket Sold must be a valid number!","Input Error",JOptionPane.ERROR_MESSAGE);
+        } 
+catch(SQLException exc){
+            JOptionPane.showMessageDialog(null,"Error inserting record: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+        }}
+
+    private void updateRecord(){
+        String recordIDStr=JOptionPane.showInputDialog(null,"Enter RecordID to update:");
+        String newConcertIDStr=JOptionPane.showInputDialog(null,"Enter new ConcertID:");
+        String newArtistName=JOptionPane.showInputDialog(null,"Enter new Artist Name:");
+        String newVenueName=JOptionPane.showInputDialog(null,"Enter new Venue Name:");
+        String newTicketSoldStr=JOptionPane.showInputDialog(null,"Enter new Number of Tickets Sold:");
+        String newConcertDateStr=JOptionPane.showInputDialog(null,"Enter new Concert Date (yyyy-mm-dd):");
+
+        if(recordIDStr==null||newConcertIDStr==null||newArtistName==null||newVenueName==null||newTicketSoldStr==null||newConcertDateStr==null) {
+            JOptionPane.showMessageDialog(null,"Operation canceled.","Cancel",JOptionPane.INFORMATION_MESSAGE);
+            return; }
+        try{int recordID=Integer.parseInt(recordIDStr);
+            int newConcertID=Integer.parseInt(newConcertIDStr);
+            int newTicketSold=Integer.parseInt(newTicketSoldStr);
+            java.sql.Date newConcertDate=java.sql.Date.valueOf(newConcertDateStr);
+
+            String query="UPDATE records SET ConcertID = ?, ArtistName = ?, VenueName = ?, TicketSold = ?, ConcertDate = ? WHERE RecordID = ?";
+            PreparedStatement pstmt=connection.prepareStatement(query);
+            pstmt.setInt(1,newConcertID);
+            pstmt.setString(2,newArtistName);
+            pstmt.setString(3,newVenueName);
+            pstmt.setInt(4,newTicketSold);
+            pstmt.setDate(5,newConcertDate);
+            pstmt.setInt(6,recordID);
+            pstmt.executeUpdate();
+
+            JOptionPane.showMessageDialog(null,"Record updated successfully!");
+        }
+        catch(NumberFormatException exc){
+            JOptionPane.showMessageDialog(null,"Ticket Sold must be a valid number!","Input Error",JOptionPane.ERROR_MESSAGE);
+        }
+        catch(SQLException exc){
+            JOptionPane.showMessageDialog(null,"Error updating record: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+        }}
+
+    private void deleteRecord(){
+        String recordIDStr=JOptionPane.showInputDialog(null,"Enter the RecordID to delete:");
+
+    if(recordIDStr==null){
+            JOptionPane.showMessageDialog(null,"Operation canceled.","Cancel",JOptionPane.INFORMATION_MESSAGE);
+        return;}
+
+        try{String query="DELETE FROM records WHERE RecordID = ?";
+            PreparedStatement pstmt=connection.prepareStatement(query);
+            pstmt.setInt(1,Integer.parseInt(recordIDStr));
+            pstmt.executeUpdate();
+
+            JOptionPane.showMessageDialog(null,"Record deleted successfully!");
+        } 
+        catch(SQLException exc){
+            JOptionPane.showMessageDialog(null,"Error deleting record: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+        }
+            
+    }                                      
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+JFrame frame=new JFrame("Producer Table Management");
+    frame.setSize(600,400);
+    frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    frame.setLayout(new BorderLayout());
+    
+JTextArea textArea=new JTextArea();
+textArea.setEditable(false);
+try{String query="SELECT * FROM producer";
+    Statement stmt=connection.createStatement();
+    ResultSet rs=stmt.executeQuery(query);
+    StringBuilder result=new StringBuilder("Producers:\n");
+while(rs.next()){
+        result.append("ID: ").append(rs.getInt("ProducerID"))
+              .append(", First Name: ").append(rs.getString("FirstName"))
+                .append(", Last Name: ").append(rs.getString("LastName"))
+                .append(", Number of Produced Albums: ").append(rs.getInt("NumofProdAlbums"))
+                .append("\n");}
+
+    textArea.setText(result.toString());
+    rs.close();
+    stmt.close();}
+catch(SQLException exc){
+    JOptionPane.showMessageDialog(this,"Error executing query: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+    return;
+}
+JScrollPane scrollPane=new JScrollPane(textArea);
+frame.add(scrollPane,BorderLayout.CENTER);
+
+JPanel buttpanel=new JPanel();
+JButton insertbutton=new JButton("Insert");
+JButton updatebutton=new JButton("Update");
+JButton deletebutton=new JButton("Delete");
+JButton okButton=new JButton("OK");
+buttpanel.add(insertbutton);
+buttpanel.add(updatebutton);
+buttpanel.add(deletebutton);
+buttpanel.add(okButton); 
+frame.add(buttpanel,BorderLayout.SOUTH);
+insertbutton.addActionListener(e->insertProducer());
+updatebutton.addActionListener(e->updateProducer());
+deletebutton.addActionListener(e->deleteProducer());
+okButton.addActionListener(e->{
+    frame.dispose();
+    
+new NewJFrame().setVisible(true);
+});
+frame.setVisible(true);
+}
+private void insertProducer(){
+    String firstName=JOptionPane.showInputDialog(this,"Enter Producer First Name:");
+    String lastName=JOptionPane.showInputDialog(this,"Enter Producer Last Name:");
+    String numofProdAlbumsStr=JOptionPane.showInputDialog(this,"Enter Number of Produced Albums:");
+    if(firstName==null||lastName==null||numofProdAlbumsStr==null){
+        JOptionPane.showMessageDialog(this,"Operation canceled.","Cancel",JOptionPane.INFORMATION_MESSAGE);
+        return;
+    }
+    try{int numofProdAlbums=Integer.parseInt(numofProdAlbumsStr);
+        String query="INSERT INTO producer (FirstName, LastName, NumofProdAlbums) VALUES (?, ?, ?)";
+        PreparedStatement pstmt=connection.prepareStatement(query);
+        pstmt.setString(1,firstName);
+        pstmt.setString(2,lastName);
+        pstmt.setInt(3,numofProdAlbums);
+        pstmt.executeUpdate();
+        JOptionPane.showMessageDialog(this,"The Producer inserted successfully!");
+    }
+catch(NumberFormatException exc){
+        JOptionPane.showMessageDialog(this,"Number of Produced Albums must be a valid number!","Input Error",JOptionPane.ERROR_MESSAGE);
+    }
+catch(SQLException exc){
+        JOptionPane.showMessageDialog(this,"Error inserting producer: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+    }}
+private void updateProducer(){
+    String producerIDStr=JOptionPane.showInputDialog(this,"Enter ProducerID to update:");
+    String newFirstName=JOptionPane.showInputDialog(this,"Enter new First Name:");
+    String newLastName=JOptionPane.showInputDialog(this,"Enter new Last Name:");
+    String newNumofProdAlbumsStr=JOptionPane.showInputDialog(this,"Enter new Number of Produced Albums:");
+    if(producerIDStr==null||newFirstName==null||newLastName==null||newNumofProdAlbumsStr==null){
+        JOptionPane.showMessageDialog(this,"Operation canceled.","Cancel",JOptionPane.INFORMATION_MESSAGE);
+        return;
+    }
+    try{int producerID=Integer.parseInt(producerIDStr);
+        int newNumofProdAlbums=Integer.parseInt(newNumofProdAlbumsStr);
+        String query="UPDATE producer SET FirstName=?, LastName=?, NumofProdAlbums=? WHERE ProducerID=?";
+        PreparedStatement pstmt=connection.prepareStatement(query);
+        pstmt.setString(1,newFirstName);
+        pstmt.setString(2,newLastName);
+        pstmt.setInt(3,newNumofProdAlbums);
+        pstmt.setInt(4,producerID);
+        pstmt.executeUpdate();
+        JOptionPane.showMessageDialog(this,"Producer updated successfully!");
+    }
+catch(NumberFormatException exc){
+        JOptionPane.showMessageDialog(this,"Number of Produced Albums must be a valid number!","Input Error",JOptionPane.ERROR_MESSAGE);
+    }
+catch(SQLException exc){
+        JOptionPane.showMessageDialog(this,"Error updating producer: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+    }}
+private void deleteProducer(){
+    String producerIDStr=JOptionPane.showInputDialog(null,"Enter ProducerID to delete:");
+    if(producerIDStr==null){
+        JOptionPane.showMessageDialog(null,"Operation canceled.","Cancel",JOptionPane.INFORMATION_MESSAGE);
+        return;
+    }
+try{String query="DELETE FROM producer WHERE ProducerID=?";
+        PreparedStatement pstmt=connection.prepareStatement(query);
+        pstmt.setInt(1,Integer.parseInt(producerIDStr));
+        pstmt.executeUpdate();
+        JOptionPane.showMessageDialog(null,"Producer deleted successfully!");
+    }
+catch(SQLException exc){
+        JOptionPane.showMessageDialog(null,"Error deleting producer: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+    }
+
+        
+    }                                         
+
+    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+JFrame frame=new JFrame("Venue Table Management");
+frame.setSize(900,600);
+frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+frame.setLayout(new BorderLayout());
+
+JTextArea textArea=new JTextArea();
+textArea.setEditable(false);
+try{String query="SELECT * FROM venue";
+    Statement stmt=connection.createStatement();
+    ResultSet rs=stmt.executeQuery(query);
+    StringBuilder res=new StringBuilder("Venues:\n");
+    while(rs.next()){
+        res.append("VenueID: ").append(rs.getInt("VenueID"))
+              .append(", Name: ").append(rs.getString("Name"))
+              .append(", Capacity: ").append(rs.getInt("Capacity"))
+              .append(", CompletedCon: ").append(rs.getInt("CompletedCon"))
+              .append(", YearsOperation: ").append(rs.getInt("YearsOperation"))
+              .append("\n");}textArea.setText(res.toString());
+    rs.close();
+    stmt.close();
+}
+catch(SQLException exc){
+    JOptionPane.showMessageDialog(this,"Error executing query: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+    return;}
+
+JScrollPane scrollPane=new JScrollPane(textArea);
+
+frame.add(scrollPane,BorderLayout.CENTER);
+JPanel buttpanel=new JPanel();
+JButton insertbutton=new JButton("Insert");
+JButton updatebutton=new JButton("Update");
+JButton deletebutton=new JButton("Delete");
+JButton okButton=new JButton("OK");
+
+buttpanel.add(insertbutton);
+buttpanel.add(updatebutton);
+buttpanel.add(deletebutton);
+buttpanel.add(okButton);
+frame.add(buttpanel,BorderLayout.SOUTH);
+
+insertbutton.addActionListener(e->insertVenue());
+updatebutton.addActionListener(e->updateVenue());
+deletebutton.addActionListener(e->deleteVenue());
+okButton.addActionListener(e->{frame.dispose();
+    new NewJFrame().setVisible(true);});
+frame.setVisible(true);
+}
+private void insertVenue(){
+    String name=JOptionPane.showInputDialog(this,"Enter the Venue Name:");
+    String capacityStr=JOptionPane.showInputDialog(this,"Enter the Venue Capacity:");
+    String yearsOperationStr=JOptionPane.showInputDialog(this,"Enter the Years of Operation:");
+    if(name==null||capacityStr==null||yearsOperationStr==null){
+        JOptionPane.showMessageDialog(this,"Operation canceled.","Cancel",JOptionPane.INFORMATION_MESSAGE);
+}
+try{
+        String query="INSERT INTO venue (Name, Capacity, YearsOperation) VALUES (?, ?, ?)";
+        PreparedStatement pstmt=connection.prepareStatement(query);
+        pstmt.setString(1,name);
+        pstmt.setInt(2,Integer.parseInt(capacityStr));
+        pstmt.setInt(3,Integer.parseInt(yearsOperationStr));
+        pstmt.executeUpdate();
+        JOptionPane.showMessageDialog(this,"Venue inserted successfully!");
+    }
+catch(SQLException exc){
+        JOptionPane.showMessageDialog(this,"Error inserting venue: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+}}
+private void updateVenue(){
+    String venueIDStr=JOptionPane.showInputDialog(this,"Enter the VenueID to update:");
+    String name=JOptionPane.showInputDialog(this,"Enter the new Venue Name:");
+    String capacityStr=JOptionPane.showInputDialog(this,"Enter the new Venue Capacity:");
+    String yearsOperationStr=JOptionPane.showInputDialog(this,"Enter new Years of Operation:");
+if(venueIDStr==null||venueIDStr.trim().isEmpty()||name==null||capacityStr==null||yearsOperationStr==null){
+        JOptionPane.showMessageDialog(this,"Operation canceled.","Cancel",JOptionPane.INFORMATION_MESSAGE);
+    return;}
+try{String query="UPDATE venue SET Name=?, Capacity=?, YearsOperation=? WHERE VenueID=?";
+        PreparedStatement pstmt=connection.prepareStatement(query);
+        pstmt.setString(1,name);
+        pstmt.setInt(2,Integer.parseInt(capacityStr));
+        pstmt.setInt(3,Integer.parseInt(yearsOperationStr));
+        pstmt.setInt(4,Integer.parseInt(venueIDStr));
+        pstmt.executeUpdate();
+        JOptionPane.showMessageDialog(this,"Venue updated successfully!");
+    }
+catch(SQLException exc){
+        JOptionPane.showMessageDialog(this,"Error updating venue: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+}}
+private void deleteVenue(){
+    String venueIDStr=JOptionPane.showInputDialog(this,"Enter the VenueID to delete:");
+    if(venueIDStr==null||venueIDStr.trim().isEmpty()){
+        JOptionPane.showMessageDialog(this,"Operation canceled.","Cancel",JOptionPane.INFORMATION_MESSAGE);
+     return;}
+try{String query="DELETE FROM venue WHERE VenueID=?";
+        PreparedStatement pstmt=connection.prepareStatement(query);
+        pstmt.setInt(1,Integer.parseInt(venueIDStr));
+        pstmt.executeUpdate();
+        JOptionPane.showMessageDialog(this,"Venue deleted successfully!");
+    }
+catch(SQLException exc){
+        JOptionPane.showMessageDialog(this,"Error deleting venue: "+exc.getMessage(),"Database Error",JOptionPane.ERROR_MESSAGE);
+}
+
+    }                                         
+
+    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+int response = JOptionPane.showConfirmDialog(this, "Are you sure you want to exit?", "Exit Confirmation", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+    if (response==JOptionPane.YES_OPTION) {
+        System.exit(0);
+    }
+    }                                         
+
+
+
+    
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+ //java.awt.EventQueue.invokeLater(() -> new NewJFrame().setVisible(true));
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new NewJFrame().setVisible(true);
+}});
+     }
+
+    // Variables declaration - do not modify                     
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton17;
+    private javax.swing.JButton jButton18;
+    private javax.swing.JButton jButton19;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
+    private javax.swing.JInternalFrame jInternalFrame1;
+    private javax.swing.JLabel jLabel1;
+    // End of variables declaration                   
+// Declare UI components
+private javax.swing.JTextField titleField;
+private javax.swing.JTextField artistIDField;
+private javax.swing.JTextField genreIDField;
+private javax.swing.JTextField companyIDField;
+private javax.swing.JTextField producerIDField;
+private javax.swing.JButton insertAlbumButton;
+private javax.swing.JButton exitButton;
+}

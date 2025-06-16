@@ -1,0 +1,100 @@
+DELIMITER $
+create procedure venueforconcerts (IN cID INT)
+BEGIN
+    DECLARE cap int;
+    DECLARE venID INT;
+
+    Select RequiredCapacity INTO cap
+    FROM concert
+    WHERE ConcertID=cID AND ConcertStatus!='Canceled';
+
+
+    SELECT venueID INTO venID
+    FROM venue
+    where capacity >=1.1*cap AND venueStatus != 'BOOKED'
+    order by( (Capacity  DIV 1000)*1 + (CompletedCon  DIV 100)*3 + YearsOperation*2 ) DESC LIMIT 1;
+
+    IF venID IS NOT NULL THEN 
+    UPDATE Concert
+    SET Concert.VenueID=venID, ConcertStatus ='Scheduled'
+    WHERE concertID=cID;
+
+	UPDATE venue
+        SET venueStatus = 'BOOKED'
+        WHERE VenueID = venID;
+   
+	SELECT VenueID,Name FROM VENUE WHERE VenueID = venID;
+ELSE SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT ='THERE IS NO VENUE AVAILABLE';
+END IF; 
+
+END $
+
+DELIMITER ;
+
+
+DELIMITER $
+CREATE TRIGGER venueUpdate
+AFTER UPDATE ON concert
+FOR EACH ROW
+BEGIN
+    IF  NEW.ConcertStatus !='Scheduled'
+THEN
+UPDATE VENUE 
+SET venueStatus='AVAILABLE'
+where VenueID=NEW.VenueID;
+
+END IF;
+END $
+DELIMITER ;
+
+
+
+
+DELIMITER $
+CREATE PROCEDURE MoveConcertToRecord(IN inputConcertID INT)
+BEGIN 
+DECLARE rstatus varchar(100);
+
+SELECT ConcertStatus INTO rstatus
+ from concert 
+ where ConcertID=inputConcertID;
+ 
+ If rstatus!='SCHEDULED' THEN 
+	INSERT INTO records (
+            ConcertID, 
+            ArtistName, 
+            VenueName, 
+            TicketSold, 
+            ConcertDate, 
+            RecordStatus
+        )
+      SELECT 
+            c.ConcertID,
+            CASE 
+                WHEN a.ArtistType = 'PERSON' THEN p.LastName 
+                ELSE b.BandName 
+            END AS ArtistName,       
+            v.Name AS VenueName,           
+            c.TicketSold AS TicketSold,            
+            CASE 
+                WHEN c.ConcertStatus = 'CANCELED' THEN NULL
+                ELSE c.ConcertDate
+            END AS ConcertDate,
+            'COMPLETED' AS RecordStatus
+        FROM concert c
+        LEFT JOIN artist a ON c.ArtistID = a.ArtistID
+        LEFT JOIN venue v ON c.VenueID = v.VenueID
+        LEFT JOIN person p ON c.ArtistID = p.ArtistID
+        LEFT JOIN band b ON c.ArtistID = b.ArtistID
+        WHERE c.ConcertID = inputConcertID;
+
+        
+        DELETE FROM concert WHERE ConcertID = inputConcertID;
+	ELSE
+        SIGNAL SQLSTATE '45000' 
+        SET MESSAGE_TEXT = 'The concert is still scheduled.';
+    END IF;
+END $
+
+DELIMITER ;

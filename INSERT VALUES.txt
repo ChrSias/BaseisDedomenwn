@@ -1,0 +1,132 @@
+INSERT INTO artist(ArtistType) 
+VALUES('PERSON'),
+('PERSON'),
+('PERSON'),
+('PERSON'),
+('PERSON'),
+('PERSON'),
+('PERSON'),
+('BAND'),
+('BAND'),
+('BAND');
+
+INSERT INTO band(BandName,FormationDate,DisbandDate,ArtistID)VALUES
+  ("Ragland", '2005-01-01', NULL, 1),
+  ("Strakofski", '2010-03-15', '2018-05-01', 2),
+  ("Droping stars", '2015-06-20', NULL, 3);
+
+INSERT INTO person (FirstName,LastName,BirthDate,Country,Alias,isSoloArtist,ArtistID)VALUES
+('George','Papadopoulos','1990-05-14','Greece','Giorgos',1,1), 
+('Maria','Kostantinidh', '2000-02-20','Greece','Marianna',0,2), 
+('John','Smith', '1988-11-03','United Kingdom','Johnny',1,3),
+('Sophia','Nikolopoulou','1992-07-25', 'Greece', 'Sofia',1,4), 
+('Ethan','Taylor','1995-01-11','United States','EthanT',0,5),
+('Katerina','Alexiou','1990-09-30','Greece','Kat',1,6),
+('Michael','Anderson','2004-04-17','United States','Mike',0,7);
+
+
+
+INSERT INTO bandmember(BandID,PersonID,FromDate,ToDate)VALUES
+    (1,1,'2005-01-01', '2010-12-31'),
+    (2,3,'2010-03-15', '2018-05-01'),
+    (2,4,'2011-01-01', '2016-06-01'),
+    (3,2,'2015-06-20', '2020-12-31');
+
+INSERT INTO genre(GenreName)VALUES 
+('Rock'),('Jazz'),('Pop'),('Classical'),('Hip-Hop');
+
+
+INSERT INTO producer(FirstName,LastName,NumofProdAlbums)VALUES
+("Elon","Musk",15),
+("Giorgos","Arsenakos",7),
+("John","Doe",10),
+("Alice","Smith",20),
+("George","Ginwall",12),
+("George","Sorros",8);
+
+INSERT INTO recordcompany(CompanyName,Adress,Phone,Email,BeginDate,EndDate)VALUES
+("Tesla","123 Electric Avenue,Silicon Valley,CA","123-456-7890","contact@tesla.com","2010-07-01",NULL),
+("PanikRecords", "45 Music St,Athens,Greece","210-123-4567","info@panikrecords.gr","2005-04-15", "2020-12-31"),
+("Omni", "789 Innovation Blvd,New York,NY","212-987-6543","support@omnimusic.com","2012-09-10",NULL),
+("Tutorial", "101 Creative Lane,Los Angeles,CA","310-555-1234","contact@tutorialrecords.com","2018-03-20", NULL),
+("OneWeb", "505 Tech Road,London,UK","020-7946-5120","info@onewebrecords.co.uk","2016-05-15","2023-06-30");
+
+INSERT INTO producercompany (ProducerID, RecordCompanyID, FromDate, ToDate) VALUES
+(1, 3,'2011-01-01','2015-12-31'),
+(2, 2,'2005-04-15','2020-12-31'), 
+(3, 4,'2010-09-10','2015-06-30'), 
+(4, 5,'2018-03-20','2023-01-01'),
+(5, 1,'2016-05-15','2021-06-30'),
+(6, 3,'2016-07-01',NULL),
+(3, 5,'2015-07-01','2020-12-31'),
+(2, 4,'2021-01-01',NULL);
+
+
+INSERT INTO artistcompany (ArtistID, CompanyID, FromDate, ToDate) VALUES
+(1, 1, '2008-05-01', '2023-05-01'),
+(2, 2, '2015-03-10', '2020-12-31'),
+(3, 3, '2008-11-15', '2023-11-15'),
+(4, 4, '2010-05-01', '2025-05-01'),
+(5, 5, '2014-07-01', '2023-06-30'),
+(6, 1, '2008-10-05', '2023-10-05'),
+(7, 2, '2021-06-10', '2025-06-10');
+
+
+INSERT INTO album (Title,ArtistID,GenreID,CompanyID,ProducerID)VALUES
+('stormed',1,2,1,4),     
+('Goosebumbs',2,3,2,5),      
+('AP Freestyle',3, 5,3,1),       
+('Primo',4,1,4,3),           
+('Bitcoin',5,4,5,6),       
+('Silence',6,3,1,2),            
+('Rolling in The Deep',7,2,1,4), 
+('Ethereum',3,4,3,1),
+('Twilight',6,1,4,5),
+('Forza Horizon',5,5,5,6);
+
+
+
+INSERT INTO albumrelease(AlbumID,ReleaseDate,ReleaseType,ReleaseStatus,Packaging)
+VALUES(1,'2015-01-01','CD','OFFICIAL','JEWEL CASE'),
+(1,'2016-02-15','MP3','PROMOTION','DIGIPAK'),
+(2,'2017-06-20','LP','OFFICIAL','CARDBOARD SLEEVE'),
+(2,'2018-08-01','CD','PROMOTION','NA'),
+(3,'2019-12-10','MP3','OFFICIAL','JEWEL CASE'),
+(3,'2020-01-15','LP','PROMOTION','DIGIPAK'),
+(4,'2015-05-15','CD','PROMOTION','DIGIPAK'),
+(5,'2021-03-25','LP','CANCELED','JEWEL CASE'),
+(6,'2019-07-01','MP3','OFFICIAL','JEWEL CASE'),
+(7,'2020-09-10','CD','OFFICIAL','DIGIPAK'),
+(8,'2021-05-20','MP3','PROMOTION','DIGIPAK'),
+(9,'2021-11-11','LP','OFFICIAL','JEWEL CASE'),
+(10,'2022-02-01','MP3','OFFICIAL','NA');
+
+
+
+INSERT INTO track (Title, AlbumID, TrackLength, TrackNo, Lyrics) VALUES
+("Story",1,'00:03:45',1,"vgazei story to vrady"),
+("Booth",1,'00:04:15', 2,"mesa sto booth tragoydao"),
+("Troll",2,'00:03:50', 1,"trollarei kai moy xalaei to paixnidi"),
+("Manifest",2,'00:04:00',2,"manifest manifest manifest"),
+("Break", 3, '00:04:05',1,"spao ta desma troo mpaklava"),
+("Speed",3,'00:03:35',2,"trexo grhgora grhgoraa"),
+("End",4,'00:04:20',1,"the end is coming for you"),
+("Day",4,'00:03:50',2,"the day is today"),
+("King ",5,'00:04:30',1,"vasilias ths kardias mas"),
+("Lost",5,'00:03:55',2,"xamenos sthn avysso"),
+("Revolution",6,'00:04:10',1,"the revolution begins now"),
+("Tripoli",6,'00:03:40',2,"Catch the wave, the vibes of tomorrow"),
+("Run", 7,'00:03:30',1,"Run free, nothing can hold us down"),
+("Fire", 7,'00:04:00',2,"We’re burning up, but it’s all worth it"),
+("Fade",8,'00:04:00',1,"The light shines through the darkness"),
+("Past",8,'00:03:55',2,"Whispers of what was, haunting the future"),
+("Hour",9,'00:04:20',1,"The clock is ticking, but we will not fall"),
+("Win",9,'00:03:50',2,"We are born to win, no matter the cost"),
+("Redemption",10, '00:04:10',1,"We seek redemption in the light"),
+("Edge", 10,'00:03:45',2,"Living on the edge, nothing is safe"),
+("Wild", 1,'00:03:35',3,"No rules, just freedom, we run wild"),
+("Dreams", 2,'00:04:00',3,"Never stop chasing the dreams that drive you"),
+("The Horizon",3,'00:03:50',3,"We look to the horizon, the future’s ours"),
+("Fight",4,'00:04:15',3,"Fight for tomorrow, never back down"),
+("Starlight",5,'00:03:55',3,"Under the starlight, we find our way");
+

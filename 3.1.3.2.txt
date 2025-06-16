@@ -1,0 +1,107 @@
+
+DELIMITER $
+CREATE PROCEDURE CreateCancelRescheduleConcert(IN aID INT, IN conDATE DATE, IN action_type CHAR(1))
+BEGIN
+DECLARE flag INT;
+DECLARE flag0 INT;
+DECLARE flag1 INT;
+DECLARE flag2 INT;
+DECLARE flag3 INT;
+DECLARE flag4 INT;
+IF action_type = 'i' THEN
+	
+    SELECT COUNT(*) into flag
+    FROM CONCERT
+    where aID=ArtistID 
+    AND conDATE=ConcertDate 
+    AND ConcertStatus ='scheduled';
+    
+    SELECT COUNT(*) into flag0
+		FROM CONCERT
+		where aID=ArtistID 
+		AND conDATE=ConcertDate 
+		AND ConcertStatus ='canceled';
+    
+		IF flag>0 THEN
+
+			SELECT 'A concert is already scheduled' AS message;
+        
+        
+		ELSEIF flag0>0 THEN
+			SELECT 'A concert is canceled for that day.' AS message;
+		ELSE
+			INSERT INTO concert (ArtistID, ConcertDate, ConcertStatus)
+				VALUES (aID, conDATE, 'scheduled');
+                SELECT 'I scheduled the concert as you requested.' AS message;
+		END IF;
+        
+        
+ELSEIF action_type = 'c' THEN
+
+	SELECT COUNT(*) into flag1
+		FROM CONCERT
+		where aID=ArtistID 
+		AND conDATE=ConcertDate 
+		AND ConcertStatus ='scheduled';
+		
+		SELECT COUNT(*) into flag2
+		FROM CONCERT
+		where aID=ArtistID 
+		AND conDATE=ConcertDate 
+		AND ConcertStatus ='canceled';
+		
+
+			IF flag1>0 THEN
+				UPDATE concert
+					SET ConcertStatus = 'canceled'
+					WHERE ArtistID = aID
+					AND ConcertDate = conDATE;
+					SELECT 'The concert has been canceled. ' AS message;
+			
+			ELSEIF flag2>0 THEN
+			SELECT 'The concert has already been canceled. ' AS message;
+			
+			ELSE 
+			SELECT 'There is no concert scheduled for that day. ' AS message;
+		END IF;
+		
+		
+    
+ELSEIF action_type = 'a' THEN
+
+				SELECT COUNT(*) into flag3
+					FROM CONCERT
+					where aID=ArtistID 
+					AND conDATE=ConcertDate 
+					AND ConcertStatus ='canceled';
+
+
+			SELECT COUNT(*) into flag4
+					FROM CONCERT
+					where aID=ArtistID 
+					AND conDATE=ConcertDate 
+					AND ConcertStatus ='scheduled';
+					
+					
+					
+					IF flag3>0 THEN
+								UPDATE concert
+									SET ConcertStatus = 'scheduled'
+									WHERE ArtistID = aID
+									AND ConcertDate = conDATE;
+									SELECT 'The concert has been rescheduled. ' AS message;
+				
+					ELSEIF flag4>0 THEN 
+					SELECT 'The concert is scheduled for that date.'  AS message;
+					
+					ELSE  SELECT 'There is no canceled concert on that date.' AS message;
+				
+				END IF;
+
+
+
+ELSE
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Invalid action type provided. Use "i", "c", or "a".';
+    END IF;
+END$
+DELIMITER $

@@ -1,0 +1,21 @@
+DELIMITER $
+create procedure venuegrade (IN vID INT)
+BEGIN
+ 
+    DECLARE grade INT;
+	DECLARE vCapacity int;
+    DECLARE vCompletedCon int;
+    DECLARE vYearsOperation int;
+    
+    SELECT
+    Capacity, CompletedCon, YearsOperation
+    INTO 
+    vCapacity, vCompletedCon, vYearsOperation
+    FROM venue
+    WHERE vID=VenueID;
+    
+SET grade=((vCapacity  DIV 1000)*1 + (vCompletedCon  DIV 100)*3 + vYearsOperation*2) ;
+SELECT grade AS VenueGrade;
+END $
+
+DELIMITER ;

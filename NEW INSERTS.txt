@@ -1,0 +1,166 @@
+INSERT INTO artist (ArtistType) 
+VALUES 
+('PERSON'),
+('PERSON'),
+('PERSON'),
+('PERSON'),
+('PERSON'),
+('PERSON'),
+('PERSON'),
+('BAND'),
+('BAND'),
+('BAND');
+
+
+INSERT INTO person (FirstName, LastName, BirthDate, Country, Alias, isSoloArtist, ArtistID)
+VALUES
+('Chris', 'Rose', '2001-07-05', 'USA', 'CR', 1, 8),
+('John', 'Snow', '2000-08-06', 'CANADA', 'KING', 1, 9),
+('Stephen', 'Curry', '1995-12-05', 'USA', 'STEPH', 1, 10),
+('Dimitris', 'Diamantidis', '1988-11-01', 'GREECE', '3D', 1, 11),
+('Kendrick', 'Nunn', '1992-08-03', 'USA', 'NULL', 1, 12),
+('Marinos', 'Argyros', '2002-03-27', 'GREECE', 'Laser', 1, 13),
+('Peter', 'Johnshon', '1975-10-02', 'UK', NULL, 1, 14);
+
+INSERT INTO person (FirstName, LastName, BirthDate, Country, Alias, isSoloArtist, ArtistID)
+VALUES
+('Alex', 'Johnson', '1995-04-12', 'USA', 'AJ', 0, 15),  -- Assuming ArtistID 15
+('Sarah', 'Smith', '1992-11-22', 'Canada', 'Sassy', 0, 16),  -- Assuming ArtistID 16
+('Mark', 'Davis', '1990-02-09', 'Australia', 'M-D', 0, 17),  -- Assuming ArtistID 17
+('Emily', 'Brown', '1998-05-30', 'UK', 'Ems', 0, 18);  -- Assuming ArtistID 18
+
+
+INSERT INTO band (BandName, FormationDate, DisbandDate, ArtistID)
+VALUES
+('GOATS', '2023-05-10', NULL, 15),
+('GREENS', '2021-03-02', NULL, 16),
+('HIVE', '2020-10-10', '2023-01-01', 17);
+
+INSERT INTO person (FirstName, LastName, BirthDate, Country, Alias, isSoloArtist, ArtistID)
+VALUES
+('Alex', 'Johnson', '1995-04-12', 'USA', 'AJ', 0, 15),  
+('Sarah', 'Smith', '1992-11-22', 'Canada', 'Sassy', 0, 16),  
+('Mark', 'Davis', '1990-02-09', 'Australia', 'M-D', 0, 17),  
+('Emily', 'Brown', '1998-05-30', 'UK', 'Ems', 0, 18);  
+
+
+INSERT INTO bandmember (BandID, PersonID, FromDate, ToDate)
+VALUES
+(1, 15, '2023-05-10', '2025-12-31'), 
+(2, 16, '2021-03-02', '2025-12-31'),  
+(3, 17, '2020-10-10', '2023-01-01'),  
+(1, 18, '2023-05-10', '2025-12-31'); 
+
+
+INSERT INTO genre (GenreName)
+VALUES
+('Metal'),
+('Blues'),
+('Reggae'),
+('Electronic'),
+('Indie');
+
+
+INSERT INTO recordcompany (CompanyName, Adress, Phone, Email, BeginDate, EndDate)
+VALUES
+('Soundwave Records', '123 Melody Lane, Nashville, TN', '555-1234-5678', 'info@soundwave.com', '2015-08-01', NULL),
+('Echo Music Group', '456 Rhythm St, Los Angeles, CA', '555-2345-6789', 'contact@echomusic.com', '2010-03-15', NULL),
+('Infinity Sounds', '789 Infinity Ave, Chicago, IL', '555-3456-7890', 'support@infinitysounds.com', '2012-11-01', '2020-12-31'),
+('Neon Lights Records', '321 Glow Blvd, Miami, FL', '555-4567-8901', 'info@neonlights.com', '2018-05-10', NULL),
+('Starry Night Music', '654 Dream St, New York, NY', '555-5678-9012', 'contact@starrynightmusic.com', '2020-01-15', NULL);
+
+
+
+INSERT INTO artistcompany (ArtistID, CompanyID, FromDate, ToDate)
+VALUES
+(1, 6, '2022-06-01', '2025-06-01'),  
+(2, 7, '2020-08-10', '2025-08-10'),  
+(3, 8, '2021-09-15', '2025-09-15'), 
+(4, 9, '2019-04-22', '2024-04-22'), 
+(5, 10, '2020-12-01', '2025-12-01'), 
+(6, 6, '2018-11-05', '2023-11-05'),  
+(7, 7, '2021-05-15', '2026-05-15'), 
+(8, 8, '2017-07-30', '2022-07-30'),  
+(9, 9, '2022-03-05', '2027-03-05'),  
+(10, 10, '2023-01-10', '2028-01-10'), 
+(11, 6, '2021-11-25', '2026-11-25');  
+
+
+INSERT INTO producer (FirstName, LastName, NumofProdAlbums)
+VALUES
+('Alice', 'Johnson', 18),
+('David', 'Bowie', 22),
+('Rachel', 'Green', 13),
+('Thomas', 'Anderson', 25),
+('Olivia', 'Williams', 8),
+('Chris', 'Brown', 30);
+
+INSERT INTO producercompany (ProducerID, RecordCompanyID, FromDate, ToDate)
+VALUES
+(7, 6, '2015-07-01', '2020-12-31'),  
+(8, 7, '2020-05-01', NULL),          
+(9, 6, '2019-10-01', NULL),           
+(10, 8, '2020-03-15', '2023-06-30'),  
+(11, 7, '2021-01-01', NULL),          
+(12, 6, '2022-01-01', '2023-12-31'),  
+(7, 8, '2017-06-01', '2021-06-30'),   
+(8, 6, '2016-09-01', NULL);           
+
+
+INSERT INTO album (Title, ArtistID, GenreID, CompanyID, ProducerID) 
+VALUES
+('TGK', 7, 5, 6, 7),         
+('METRO', 8, 3, 7, 8),        
+('GTK', 9, 4, 6, 9),          
+('FREESTYLE LP', 10, 5, 8, 10),
+('GODMODE', 11, 2, 7, 11),    
+('SELFMADE', 12, 1, 6, 12),   
+('LOVE', 7, 3, 8, 7),         
+('HOOD', 8, 4, 6, 8),         
+('Classic Music', 9, 1, 7, 9), 
+('Trap Industry', 10, 5, 8, 10); 
+
+
+INSERT INTO track (Title, AlbumID, TrackLength, TrackNo, Lyrics) VALUES
+("Xeiroterh Genia", 3, '00:05:17', 1, 'Lyrics'),
+("Mov Vroxh", 3, '00:03:27', 1, 'Lyrics'),
+("Alhtikh Agaph", 3, '00:04:47', 1, 'Lyrics'),
+("Fraxths", 1, '00:01:57', 1, 'Lyrics'),
+("Lovotomimenoi", 1, '00:04:37', 1, 'Lyrics'),
+("TGK", 1, '00:05:47', 1, 'Lyrics'),
+("Holdem", 2, '00:06:17', 1, 'Lyrics'),
+("M2S", 2, '00:03:57', 1, 'Lyrics'),
+("Point Bank", 2, '00:05:34', 1, 'Lyrics'),
+("Psyxh", 4, '00:03:33', 1, 'Lyrics'),
+("Oxi shmera", 5, '00:03:22', 1, 'Lyrics'),
+("Diagnwsh", 6, '00:04:47', 1, 'Lyrics'),
+("Airmax", 7, '00:00:57', 1, 'Lyrics'),
+("Boban", 8, '00:02:32', 1, 'Lyrics'),
+("Diasthmoploia", 9, '00:07:27', 1, 'Lyrics'),
+("Polikatikies", 10, '00:01:11', 1, 'Lyrics'),
+("Spike Lee", 4, '00:02:22', 1, 'Lyrics'),
+("Ta skylia", 5, '00:04:44', 1, 'Lyrics'),
+("Selini", 6, '00:05:55', 1, 'Lyrics'),
+("Pou hsoun?", 7, '00:03:55', 1, 'Lyrics'),
+("Aderfos gi aderfo", 8, '00:02:44', 1, 'Lyrics'),
+("Paranoid", 9, '00:05:00', 1, 'Lyrics'),
+("Lithium", 10, '00:03:04', 1, 'Lyrics'),
+("Teleiwnoyme", 6, '00:04:05', 1, 'Lyrics'),
+("Agaphmenoi", 8, '00:05:06', 1, 'Lyrics');
+
+
+INSERT INTO albumrelease (AlbumID, ReleaseDate, ReleaseType, ReleaseStatus, Packaging) VALUES
+(1, '2023-01-10', 'CD', 'OFFICIAL', 'JEWEL CASE'),
+(2, '2023-02-20', 'LP', 'OFFICIAL', 'CARDBOARD SLEEVE'),
+(3, '2023-03-15', 'MP3', 'PROMOTION', 'DIGIPAK'),
+(4, '2023-04-05', 'CD', 'PROMOTION', 'NA'),
+(5, '2023-05-10', 'LP', 'OFFICIAL', 'JEWEL CASE'),
+(6, '2023-06-01', 'MP3', 'OFFICIAL', 'DIGIPAK'),
+(7, '2023-07-12', 'LP', 'CANCELED', 'DIGIPAK'),
+(8, '2023-08-25', 'CD', 'OFFICIAL', 'NA'),
+(9, '2023-09-30', 'MP3', 'PROMOTION', 'CARDBOARD SLEEVE'),
+(10, '2023-10-15', 'LP', 'OFFICIAL', 'DIGIPAK'),
+(11, '2023-11-05', 'CD', 'PROMOTION', 'JEWEL CASE'),
+(12, '2023-12-01', 'MP3', 'CANCELED', 'NA');
+
+

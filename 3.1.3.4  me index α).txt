@@ -1,0 +1,13 @@
+DELIMITER $
+CREATE PROCEDURE GetArtistsByTicketRange(IN minTickets INT, IN maxTickets INT)
+BEGIN
+    SELECT DISTINCT ArtistName
+    FROM records
+    WHERE TicketSold BETWEEN minTickets AND maxTickets;
+END $
+DELIMITER ;
+CALL GetArtistsByTicketRange(20000, 30000);
+
+-- με index
+
+CREATE INDEX idxticketsoldartist ON records (TicketSold, ArtistName);

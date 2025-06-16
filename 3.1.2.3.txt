@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS records(
+    RecordID INT AUTO_INCREMENT,
+    ConcertID INT,
+    ArtistName VARCHAR(255) NOT NULL DEFAULT 'UNKNOWN',
+    VenueName VARCHAR(255) NOT NULL DEFAULT ' UNKNOWN',
+    TicketSold INT ,
+    ConcertDate DATE DEFAULT NULL,
+    RecordStatus ENUM('COMPLETED') NOT NULL,
+    PRIMARY KEY(RecordID)
+);

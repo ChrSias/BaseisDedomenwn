@@ -1,0 +1,45 @@
+CREATE TABLE IF NOT EXISTS venue(
+    VenueID INT AUTO_INCREMENT ,
+    Name VARCHAR(100)NOT NULL,
+    Capacity INT NOT NULL,
+    CompletedCon INT DEFAULT 0,
+    YearsOperation INT NOT NULL,
+    venueStatus ENUM('AVAILABLE', 'BOOKED') DEFAULT 'AVAILABLE',
+    PRIMARY KEY(VenueID));
+    
+    
+    
+    CREATE TABLE IF NOT EXISTS concert (
+    ConcertID INT NOT NULL AUTO_INCREMENT,
+    ArtistID INT NOT NULL,
+    ConcertDate DATE NOT NULL,
+    ConcertStatus ENUM('SCHEDULED', 'COMPLETED', 'CANCELED') NOT NULL DEFAULT 'SCHEDULED',
+    RequiredCapacity INT NOT NULL DEFAULT 0,
+    VenueID INT DEFAULT NULL,
+    TicketSold INT ,
+    PRIMARY KEY (ConcertID),
+    INDEX (ArtistID),
+    INDEX (VenueID),
+    CONSTRAINT concert_venues FOREIGN KEY (VenueID) 
+        REFERENCES venue(VenueID)
+        ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT concert_artists FOREIGN KEY (ArtistID) 
+        REFERENCES artist(ArtistID)
+        ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+
+INSERT INTO venue (Name, Capacity,CompletedCon,YearsOperation)
+ VALUES('Stadium Karaiskakis', 50000, 100, 15),
+('OPAP Arena', 30000, 5, 10),
+('Kolokotronis', 20000, 8, 20),
+('Maracana', 40000, 7, 12),
+('Open ', 15000, 4, 8);
+
+
+INSERT INTO concert(ArtistID,ConcertDate,ConcertStatus,RequiredCapacity,VenueID) 
+VALUES(1,'2024-06-15','SCHEDULED',25000,NULL),
+(2,'2024-07-20','SCHEDULED',15000,NULL),
+(3,'2024-08-10','SCHEDULED',5000,NULL),
+(4,'2024-09-05','SCHEDULED',30000,NULL),
+(5,'2024-10-01','SCHEDULED',10000,NULL);

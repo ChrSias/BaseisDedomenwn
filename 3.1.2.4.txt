@@ -1,0 +1,32 @@
+CREATE TABLE IF NOT EXISTS DBA(
+DBAID INT AUTO_INCREMENT,
+UserName VARCHAR(55),
+start_date date NOT NULL,
+end_date date,
+PRIMARY KEY (DBAID)
+);
+
+CREATE TABLE IF NOT EXISTS DBAlog(
+LogID INT AUTO_INCREMENT,
+USERNAME VARCHAR(50) NOT NULL, 
+DETAILS TEXT,       
+ActionDate DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, 
+PRIMARY KEY(LogID)
+);
+
+
+INSERT INTO DBA(UserName,start_date,end_date)
+VALUES ('admin_user', '2023-01-01',NULL),  
+       ('db_manager', '2020-05-15',NULL);
+INSERT INTO DBA(UserName,start_date,end_date)
+VALUES ('sys_admin', '2023-05-24',NULL),  
+       ('dev_user', '2021-05-20',NULL);
+
+
+INSERT INTO DBAlog (USERNAME, DETAILS) VALUES
+('admin_user', 'Created a new table named EmployeeDetails.'),
+('db_manager', 'Updated records in the CustomerOrders table.'),
+('sys_admin', 'Granted SELECT privileges to user analytics_team.'),
+('dev_user', 'Dropped unused table named TempData.');
+
+

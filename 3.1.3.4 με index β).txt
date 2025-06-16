@@ -1,0 +1,15 @@
+
+DELIMITER $
+CREATE PROCEDURE GetConcertDatesByVenue(IN venue VARCHAR(255))
+BEGIN
+    SELECT DISTINCT ConcertDate
+    FROM records
+    WHERE VenueName=venue;
+END $
+DELIMITER ;
+
+
+CALL GetConcertDatesByVenue('Stadium Karaiskakis');
+
+-- Το index
+CREATE INDEX idx_venue_name ON records (VenueName);
