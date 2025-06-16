@@ -1,0 +1,79 @@
+DELIMITER $
+
+CREATE TRIGGER NewConcert
+BEFORE INSERT ON concert
+FOR EACH ROW
+BEGIN
+
+DECLARE ConcertCount INT;
+
+IF DATEDIFF(NEW.ConcertDATE , CURDATE()) <=5 
+    THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT ='Concert must be scheduled at least 5 days before ConsertDate.';
+END IF;
+
+
+SELECT COUNT(*) INTO ConcertCount
+FROM concert  
+WHERE concertstatus='Scheduled'
+AND artistID = NEW.artistID;
+
+    
+    IF (ConcertCount>=3) THEN
+SIGNAL SQLSTATE '45000'
+SET MESSAGE_TEXT ='This artist has 3 scheduled concerts already!';
+END IF;
+END$
+DELIMITER ;
+
+
+DELIMITER $
+
+CREATE TRIGGER updateConcert
+BEFORE UPDATE ON Concert
+FOR EACH ROW
+BEGIN
+DECLARE ConcertCount INT;
+IF OLD.ConcertStatus ='Canceled' AND NEW.ConcertStatus ='Scheduled'
+THEN
+SELECT COUNT(*) INTO ConcertCount
+FROM concert  
+WHERE ConcertStatus ='Scheduled'
+AND artistID = NEW.artistID;
+
+    
+    IF (ConcertCount>=3) THEN
+SIGNAL SQLSTATE '45000'
+SET MESSAGE_TEXT ='This artist has 3 scheduled concerts already!';
+END IF;
+END IF;
+
+IF OLD.ConcertStatus ='Scheduled' AND NEW.ConcertStatus ='Canceled'
+THEN
+	IF DATEDIFF(OLD.concertDate, CURDATE()) < 3 THEN
+ SIGNAL SQLSTATE '45000'
+            SET MESSAGE_TEXT = 'Concert cancellations must be made at least 3 days prior to the event.';
+	END IF;
+END IF;
+
+
+END$
+
+DELIMITER ;
+
+
+DELIMITER $
+CREATE PROCEDURE ScheduleConcert(
+    IN artist_id INT,
+    IN concert_date DATE,
+    IN requiredcap INT
+)
+BEGIN
+    
+    INSERT INTO concert (ArtistID, ConcertDate, RequiredCapacity, ConcertStatus)
+    VALUES (artist_id, concert_date, requiredcap, 'SCHEDULED');
+    
+END $
+
+DELIMITER ;
